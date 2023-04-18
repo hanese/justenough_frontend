@@ -2,9 +2,9 @@
 
 </template>
 
-<script>
+<script >
 export default {
-  name: "test"
+  name: "Content"
 }
 </script>
 
