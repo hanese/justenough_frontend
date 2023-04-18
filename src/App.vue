@@ -6,7 +6,7 @@ import Content from "@/components/Content.vue";
 <template>
 
   <header>
-    <div >
+    <div>
       <HeaderWithNavbar/>
     </div>
   </header>

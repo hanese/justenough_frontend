@@ -1,12 +1,12 @@
-<template>
-
-</template>
-
 <script >
 export default {
   name: "Content"
 }
 </script>
+
+<template>
+
+</template>
 
 <style scoped>
 
