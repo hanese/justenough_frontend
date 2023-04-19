@@ -1,6 +1,7 @@
 <script setup>
 import HeaderWithNavbar from "@/components/HeaderWithNavbar.vue";
 import Content from "@/components/Content.vue";
+
 </script>
 
 <template>
