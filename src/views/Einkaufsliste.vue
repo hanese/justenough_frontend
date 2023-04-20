@@ -1,18 +1,13 @@
 <template>
-  <div>
-    <HeaderWithNavbar/>
-  </div>
-  <h1>Home</h1>
+  <HeaderWithNavbar/>
+  <h1>Einkaufsliste</h1>
 </template>
 
 <script>
-
 import HeaderWithNavbar from "@/components/HeaderWithNavbar.vue";
-
 export default {
-  name: "Home",
-  components: {HeaderWithNavbar},
-
+  name: "Einkaufsliste",
+  components: {HeaderWithNavbar}
 }
 </script>
 

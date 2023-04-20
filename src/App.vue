@@ -1,6 +1,5 @@
 <script setup>
 import HeaderWithNavbar from "@/components/HeaderWithNavbar.vue";
-import Content from "@/components/Content.vue";
 
 </script>
 
@@ -10,13 +9,11 @@ import Content from "@/components/Content.vue";
     <div id="nav">
     </div>
     <router-view/>
-    <div>
-      <HeaderWithNavbar/>
-    </div>
+
   </header>
 
   <main>
-    <Content/>
+
   </main>
 
 </template>

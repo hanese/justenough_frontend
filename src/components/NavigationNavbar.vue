@@ -10,9 +10,9 @@ export default {
       Dropdown Menu
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <li><a class="dropdown-item" href="Rezepte.vue">Rezepte</a></li>
-      <li><a class="dropdown-item" href="zutaten.html">Zutaten</a></li>
-      <li><a class="dropdown-item" href="einkaufsliste.html">Einkaufsliste</a></li>
+      <router-link to="/zutaten">Zutaten</router-link>
+      <router-link to="/rezepte">Rezepte</router-link>
+      <router-link to="/einkaufsliste">Einkaufsliste</router-link>
     </ul>
 </template>
 

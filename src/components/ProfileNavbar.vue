@@ -1,7 +1,5 @@
-
-
 <script>
-import Rezepte from './Rezepte.vue';
+import Rezepte from '../views/Rezepte.vue';
 export default {
   name: "ProfileNavbar"
 }
