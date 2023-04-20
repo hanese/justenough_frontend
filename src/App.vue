@@ -7,6 +7,9 @@ import Content from "@/components/Content.vue";
 <template>
 
   <header>
+    <div id="nav">
+    </div>
+    <router-view/>
     <div>
       <HeaderWithNavbar/>
     </div>
