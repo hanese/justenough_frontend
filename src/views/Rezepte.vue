@@ -1,18 +1,5 @@
-<script>
-import HeaderWithNavbar from "@/components/HeaderWithNavbar.vue";
-export default {
-  name: "Rezepte",
-  components: {HeaderWithNavbar}
-}
-</script>
-
 <template>
-  <HeaderWithNavbar/>
-  <h1>Rezepte</h1>
+  <div>
+    <h1>Rezepte</h1>
+  </div>
 </template>
-
-
-
-<style scoped>
-
-</style>

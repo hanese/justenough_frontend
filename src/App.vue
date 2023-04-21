@@ -6,8 +6,7 @@ import HeaderWithNavbar from "@/components/HeaderWithNavbar.vue";
 <template>
 
   <header>
-    <div id="nav">
-    </div>
+    <HeaderWithNavbar/>
     <router-view/>
 
   </header>

@@ -1,15 +1,18 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import Login from "@/views/Login.vue";
+import {createRouter, createWebHistory} from 'vue-router'
+import Profil from "@/views/Profil.vue";
 import Einkaufsliste from "@/views/Einkaufsliste.vue";
 import Home from "@/views/Home.vue";
 import Zutaten from "@/views/Zutaten.vue";
 import Rezepte from "@/views/Rezepte.vue";
+import Einstellungen from "@/views/Einstellungen.vue";
+
 const routes = [
-    { path: '/login', name: 'Login', component: Login},
-    { path: '/einkaufsliste', name: 'Einkaufsliste', component: Einkaufsliste},
-    { path: '/zutaten', name: 'Zutaten', component: Zutaten},
-    { path: '/rezepte', name: 'Rezepte', component: Rezepte},
-    { path: '/', name: 'Home', component: Home},
+    {path: '/profil', name: 'Profil', component: Profil},
+    {path: '/einkaufsliste', name: 'Einkaufsliste', component: Einkaufsliste},
+    {path: '/zutaten', name: 'Zutaten', component: Zutaten},
+    {path: '/rezepte', name: 'Rezepte', component: Rezepte},
+    {path: '/', name: 'Home', component: Home},
+    {path: '/einstellungen', name: 'Einstellungen', component: Einstellungen},
 
 
 ]

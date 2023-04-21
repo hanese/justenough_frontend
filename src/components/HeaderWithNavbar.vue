@@ -15,7 +15,8 @@ import ProfileNavbar from "@/components/ProfileNavbar.vue";
     </div>
     
 
-    <h1>JustEnough</h1>
+      <h1>JustEnough</h1>
+
 
     <div>
       <ProfileNavbar/>
