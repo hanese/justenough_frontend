@@ -11,7 +11,6 @@ import SearchFilterAdd from "@/components/SearchFilterAdd.vue";
 
     <div class="SearchFilterAdd">
       <SearchFilterAdd/>
-
     </div>
 
   </div>
@@ -20,9 +19,11 @@ import SearchFilterAdd from "@/components/SearchFilterAdd.vue";
 
 <style scoped>
 h1{
-
+  text-align: center;
+  padding-bottom: 20px;
+  font-size: 30pt;
 }
 .ZutatenHeader {
-  position: relative;
+
 }
 </style>

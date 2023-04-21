@@ -5,16 +5,14 @@ export default {
 </script>
 
 <template>
-  <div class="content">
-    <div class="SearchFilterAdd">
-
-      <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-             aria-describedby="search-addon"/>
-      <button type="button" class="btn btn-outline-secondary">search</button>
-      <button class="btn btn-outline-secondary" type="button" id="button-addon2">+</button>
-
+  <div class="SearchFilterAdd">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Suche" aria-label="Recipient's username with two button addons">
+      <button class="btn btn-outline-secondary" type="button">Button</button>
+      <button class="btn btn-outline-secondary" type="button">+</button>
     </div>
   </div>
+
 
 </template>
 
@@ -28,8 +26,9 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-.content {
+.content{
   position: relative;
 }
+
+
 </style>

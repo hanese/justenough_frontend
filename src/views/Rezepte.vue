@@ -3,7 +3,7 @@ import SearchFilterAdd from "@/components/SearchFilterAdd.vue";
 </script>
 
 <template>
-  <div class="RezepteHeader">
+  <div class="ZutatenHeader">
 
     <div>
       <h1>Rezepte</h1>
@@ -11,7 +11,6 @@ import SearchFilterAdd from "@/components/SearchFilterAdd.vue";
 
     <div class="SearchFilterAdd">
       <SearchFilterAdd/>
-
     </div>
 
   </div>
@@ -20,9 +19,11 @@ import SearchFilterAdd from "@/components/SearchFilterAdd.vue";
 
 <style scoped>
 h1{
-
+  text-align: center;
+  padding-bottom: 20px;
+  font-size: 30pt;
 }
-.RezepteHeader {
-  position: relative;
+.ZutatenHeader {
+
 }
 </style>
