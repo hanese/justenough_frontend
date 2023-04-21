@@ -29,7 +29,7 @@ import ProfileNavbar from "@/components/ProfileNavbar.vue";
 
 <style scoped>
 h1 {
-  font-family: "Comic Sans MS", serif;
+  font-family: "Helvetica Neue", serif;
   font-size: 50px;
   flex-grow: 1;
   text-align: center;
