@@ -33,12 +33,12 @@ h1 {
   font-size: 50px;
   flex-grow: 1;
   text-align: center;
-  color: white;
+  color: White;
 }
 
 .header {
   display: flex;
   align-items: center;
-  background-color: powderblue;
+  background-color: #a97272;
 }
 </style>
