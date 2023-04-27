@@ -1,6 +1,6 @@
 <script setup>
 import HeaderWithNavbar from "@/components/HeaderWithNavbar.vue";
-
+import HelloWorld from "@/components/HelloWorld.vue";
 </script>
 
 <template>
@@ -8,7 +8,7 @@ import HeaderWithNavbar from "@/components/HeaderWithNavbar.vue";
   <header>
     <HeaderWithNavbar/>
     <router-view/>
-
+    <HelloWorld/>
   </header>
 
   <main>
