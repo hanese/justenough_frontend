@@ -1,19 +1,22 @@
 <script setup>
 
 import {ref} from "vue"
+
 let input = ref("")
-const ingridients = ["Salz", "Nudeln", "Käse", "Kartoffel"]
-function filteredList(){
-  if (this.input.length===0){
+const ingredients = ["Salz", "Nudeln", "Käse", "Kartoffel"]
+const add = ["Zutat hinzufügen"]
+
+function filteredList() {
+  if (this.input.length === 0) {
     return 0
-
+  } else if (ingredients.filter((ingredient) => ingredient.toLowerCase().startsWith(input.value.toLowerCase())).length === 0) {
+    return add
+  } else {
+    return ingredients.filter((ingredient) => ingredient.toLowerCase().startsWith(input.value.toLowerCase()))
   }
-  else {
-    return ingridients.filter((ingridient) => ingridient.toLowerCase().includes(input.value.toLowerCase()))
   }
-}
 
-
+//http://localhost:8000/api/allIngredients
 </script>
 
 <template>
@@ -21,11 +24,8 @@ function filteredList(){
     <div class="input-group">
 
 
-
       <input type="text" class="form-control" placeholder="Suche"
              aria-label="Recipient's username with two button addons" v-model="input">
-
-
 
 
       <button class="btn btn-outline-secondary" type="button"><span class="material-symbols-outlined"
@@ -46,11 +46,10 @@ function filteredList(){
       </ul>
 
 
-
     </div>
     <div>
       <ul>
-        <li class="testSearch" v-for="ingridient in filteredList()" :key="ingridient">{{ingridient}}</li>
+        <li class="testSearch" v-for="ingredient in filteredList()" :key="ingredient">{{ ingredient }}</li>
       </ul>
     </div>
 
@@ -64,5 +63,7 @@ function filteredList(){
 .SearchFilterAdd {
 
 }
-.input-group{}
+
+.input-group {
+}
 </style>

@@ -1,5 +1,5 @@
 <script setup>
-import SearchFilterAdd from "@/components/SearchFilterAddIngridients.vue";
+import SearchFilterAdd from "@/components/SearchFilterAddIngredients.vue";
 import SearchbarTest from "@/components/SearchbarTest.vue";
 </script>
 
