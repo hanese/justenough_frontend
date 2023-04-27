@@ -1,14 +1,33 @@
-<script>
-export default {
-  name: "SearchFilterAdd"
+<script setup>
+
+import {ref} from "vue"
+let input = ref("")
+const ingridients = ["Salz", "Nudeln", "Käse", "Kartoffel"]
+function filteredList(){
+  if (this.input.length===0){
+    return 0
+
+  }
+  else {
+    return ingridients.filter((ingridient) => ingridient.toLowerCase().includes(input.value.toLowerCase()))
+  }
 }
+
+
 </script>
 
 <template>
   <div class="SearchFilterAdd">
     <div class="input-group">
+
+
+
       <input type="text" class="form-control" placeholder="Suche"
-             aria-label="Recipient's username with two button addons" >
+             aria-label="Recipient's username with two button addons" v-model="input">
+
+
+
+
       <button class="btn btn-outline-secondary" type="button"><span class="material-symbols-outlined"
                                                                     style="padding-top: 10px">
     search
@@ -22,11 +41,19 @@ export default {
               aria-expanded="false">Filter
       </button>
       <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Vegetarisch</a></li>
-        <li><a class="dropdown-item" href="#">Vegan</a></li>
+        <li><a class="dropdown-item" href="#">Test</a></li>
+        <li><a class="dropdown-item" href="#">Test</a></li>
       </ul>
 
+
+
     </div>
+    <div>
+      <ul>
+        <li class="testSearch" v-for="ingridient in filteredList()" :key="ingridient">{{ingridient}}</li>
+      </ul>
+    </div>
+
   </div>
 
 
@@ -35,18 +62,7 @@ export default {
 
 <style scoped>
 .SearchFilterAdd {
-  padding-top: 10px;
-  width: 500px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 
 }
-
-.content {
-  position: relative;
-}
-
-
+.input-group{}
 </style>
