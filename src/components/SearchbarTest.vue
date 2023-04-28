@@ -4,7 +4,7 @@ import {ref} from "vue"
 
 let input = ref("")
 const ingredients = ["Salz", "Nudeln", "Käse", "Kartoffel"]
-const add = ["Zutat hinzufügen"]
+const add = ["Zutat erstellen"]
 
 function filteredList() {
   if (this.input.length === 0) {
@@ -14,7 +14,17 @@ function filteredList() {
   } else {
     return ingredients.filter((ingredient) => ingredient.toLowerCase().startsWith(input.value.toLowerCase()))
   }
+}
+
+
+function addIngredient(ingredient) {
+
+  if (ingredient === "Zutat erstellen") {
+    console.log("Zutat erstellen")
+  } else {
+    console.log("Zutat")
   }
+}
 
 //http://localhost:8000/api/allIngredients
 </script>
@@ -48,8 +58,10 @@ function filteredList() {
 
     </div>
     <div>
-      <ul style=" list-style-type: none;">
-        <li class="testSearch" v-for="ingredient in filteredList()" :key="ingredient">{{ ingredient }}</li>
+      <ul style="list-style-type: none; display: block;">
+        <li class="testSearch" v-for="ingredient in filteredList()" :key="ingredient" @click="addIngredient(ingredient)">
+          <span style="display: inline">{{ ingredient }}</span>
+        </li>
       </ul>
     </div>
 
@@ -60,10 +72,22 @@ function filteredList() {
 
 
 <style scoped>
-.SearchFilterAdd {
-
+li {
+  display: inline;
+  font-size: 15px;
+  margin-right: 10px;
 }
 
-.input-group {
+li:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #5955554F;
+  z-index: -1;
 }
+
+
 </style>

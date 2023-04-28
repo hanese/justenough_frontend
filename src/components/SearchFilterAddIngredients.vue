@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: "SearchFilterAddIngridients"
+  name: "SearchFilterAddIngredients"
 }
 </script>
 
