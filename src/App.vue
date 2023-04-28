@@ -1,8 +1,6 @@
 <script setup>
 import HeaderWithNavbar from "@/components/HeaderWithNavbar.vue";
 
-import GetUserData from "@/components/GetUserData.vue";
-import LoginForm from "@/components/LoginForm.vue";
 </script>
 
 <template>
@@ -10,7 +8,6 @@ import LoginForm from "@/components/LoginForm.vue";
     <header>
         <HeaderWithNavbar/>
         <router-view/>
-
 
     </header>
 

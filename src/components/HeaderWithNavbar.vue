@@ -14,8 +14,11 @@ import ProfileNavbar from "@/components/ProfileNavbar.vue";
       <NavigationNavbar/>
     </div>
 
+    <div class="header"></div>
+    <router-link to="/">
+      <h1>JustEnough</h1>
 
-    <h1>JustEnough</h1>
+    </router-link>
 
 
     <div>
@@ -28,17 +31,19 @@ import ProfileNavbar from "@/components/ProfileNavbar.vue";
 
 
 <style scoped>
-h1 {
+h1{
+  color: white;
+  position: center;
+}
+.header {
   font-family: "Helvetica Neue", serif;
   font-size: 50px;
-  flex-grow: 1;
-  text-align: center;
-  color: White;
-}
 
-.header {
+  color: White;
   display: flex;
   align-items: center;
   background-color: #a97272;
 }
+
+
 </style>
