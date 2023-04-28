@@ -48,7 +48,7 @@ function filteredList() {
 
     </div>
     <div>
-      <ul>
+      <ul style=" list-style-type: none;">
         <li class="testSearch" v-for="ingredient in filteredList()" :key="ingredient">{{ ingredient }}</li>
       </ul>
     </div>
