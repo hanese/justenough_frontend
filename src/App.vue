@@ -1,6 +1,6 @@
 <script setup>
 import HeaderWithNavbar from "@/components/HeaderWithNavbar.vue";
-import HelloWorld from "@/components/HelloWorld.vue";
+
 import GetUserData from "@/components/GetUserData.vue";
 import LoginForm from "@/components/LoginForm.vue";
 </script>
@@ -10,9 +10,8 @@ import LoginForm from "@/components/LoginForm.vue";
     <header>
         <HeaderWithNavbar/>
         <router-view/>
-        <HelloWorld/>
-        <LoginForm/>
-        <GetUserData/>
+
+
     </header>
 
   <main>
