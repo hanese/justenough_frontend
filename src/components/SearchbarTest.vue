@@ -3,7 +3,18 @@
 import {ref} from "vue"
 
 let input = ref("")
-const ingredients = ["Salz", "Nudeln", "Käse", "Kartoffel"]
+//const response = await fetch("http://localhost:8000/api/ingredients/getAll")
+let ingredients
+//const ingredients = ["Salz", "Nudeln", "Käse", "Kartoffel"]
+
+
+
+fetch('http://localhost:8000/api/ingredients/getAll').then(response => response.json()).then(data => {
+  ingredients = data.map(item => item.ingredient);
+
+}).catch(error => console.error(error));
+
+
 const add = ["Zutat erstellen"]
 
 function filteredList() {
@@ -59,7 +70,8 @@ function addIngredient(ingredient) {
     </div>
     <div>
       <ul style="list-style-type: none; display: block;">
-        <li class="testSearch" v-for="ingredient in filteredList()" :key="ingredient" @click="addIngredient(ingredient)">
+        <li class="testSearch" v-for="ingredient in filteredList()" :key="ingredient"
+            @click="addIngredient(ingredient)">
           <span style="display: inline">{{ ingredient }}</span>
         </li>
       </ul>
