@@ -6,6 +6,7 @@ import Zutaten from "@/views/Zutaten.vue";
 import Rezepte from "@/views/Rezepte.vue";
 import Einstellungen from "@/views/Einstellungen.vue";
 
+
 const routes = [
     {path: '/profil', name: 'Profil', component: Profil},
     {path: '/einkaufsliste', name: 'Einkaufsliste', component: Einkaufsliste},

@@ -3,10 +3,7 @@
 import {ref} from "vue"
 
 let input = ref("")
-//const response = await fetch("http://localhost:8000/api/ingredients/getAll")
 let ingredients
-//const ingredients = ["Salz", "Nudeln", "Käse", "Kartoffel"]
-
 
 
 fetch('http://localhost:8000/api/ingredients/getAll').then(response => response.json()).then(data => {
@@ -44,10 +41,8 @@ function addIngredient(ingredient) {
   <div class="SearchFilterAdd">
     <div class="input-group">
 
-
       <input type="text" class="form-control" placeholder="Suche"
              aria-label="Recipient's username with two button addons" v-model="input">
-
 
       <button class="btn btn-outline-secondary" type="button"><span class="material-symbols-outlined"
                                                                     style="padding-top: 10px">
@@ -72,7 +67,16 @@ function addIngredient(ingredient) {
       <ul style="list-style-type: none; display: block;">
         <li class="testSearch" v-for="ingredient in filteredList()" :key="ingredient"
             @click="addIngredient(ingredient)">
-          <span style="display: inline">{{ ingredient }}</span>
+          <span style="display: inline">{{ ingredient }}
+           <button class="btn btn-outline-secondary"  type="button" @click="console.log('Button 1 clicked')">
+           <span class="material-symbols-outlined" style="padding-top: 6px">add</span>
+           </button>
+
+           <button class="btn btn-outline-secondary" type="button" @click="console.log('Button 1 clicked')">
+           <span class="material-symbols-outlined" style="padding-top: 6px">add_shopping_cart</span>
+           </button>
+
+          </span>
         </li>
       </ul>
     </div>
@@ -85,9 +89,9 @@ function addIngredient(ingredient) {
 
 <style scoped>
 li {
-  display: inline;
+  display: block;
   font-size: 15px;
-  margin-right: 10px;
+  margin-bottom: 10px; /* added margin-bottom for spacing */
 }
 
 li:hover::before {
@@ -97,7 +101,7 @@ li:hover::before {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #5955554F;
+  background-color: rgba(169, 114, 114, 0.15);
   z-index: -1;
 }
 
