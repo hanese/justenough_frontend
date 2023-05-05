@@ -5,6 +5,7 @@ import GetUserData from "@/components/GetUserData.vue";
 </script>
 
 <template>
+  <h1>Login</h1>
   <LoginForm/>
   <GetUserData/>
 
