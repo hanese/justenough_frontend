@@ -35,11 +35,12 @@ function addIngredient(ingredient) {
     const data = {
       ingredient: ingredient
     }
+    const token = getTokenFromCookie()
     const options = {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
-        'Authorization': 'bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJOYW1lIiwiZXhwIjoxNjgzMjc2OTg0fQ.O7_vElPxBOBzX5xHtlglOXmIEbfPw1S6fDlYPPvOOjg'
+        'Authorization': `Bearer ${token}`
       },
       body: JSON.stringify(data)
 
@@ -49,19 +50,30 @@ function addIngredient(ingredient) {
   }
 }
 
+function getTokenFromCookie() {
+  const cookies = document.cookie.split(';');
+  for (let i = 0; i < cookies.length; i++) {
+    const cookie = cookies[i].trim();
+    if (cookie.startsWith('access_token=')) {
+      return cookie.substring('access_token='.length, cookie.length);
+    }
+  }
+  return null;
+}
+
 
 function addIngredientToShoppingList(ingredient){
   const data = {
     ingredient: ingredient
   }
+  const token = getTokenFromCookie()
   const options = {
     method: 'POST',
     headers: {
       'content-type': 'application/json',
-      'Authorization': 'bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJOYW1lIiwiZXhwIjoxNjgzMjc2OTg0fQ.O7_vElPxBOBzX5xHtlglOXmIEbfPw1S6fDlYPPvOOjg'
+      'Authorization': `Bearer ${token}`
     },
     body: JSON.stringify(data)
-
 
   };
   fetch('http://localhost:8000/api/shopping/postShoppingItem', options)
