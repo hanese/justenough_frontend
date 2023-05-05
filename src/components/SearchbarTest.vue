@@ -5,7 +5,7 @@ import {ref} from "vue"
 let input = ref("")
 let ingredients
 
-
+//get all Ingredients
 fetch('http://localhost:8000/api/ingredients/getAll').then(response => response.json()).then(data => {
   ingredients = data.map(item => item.ingredient);
 
@@ -29,30 +29,58 @@ function addIngredient(ingredient) {
 
   if (ingredient === "Zutat erstellen") {
     console.log("Zutat erstellen")
-  } else {
-    console.log("Zutat")
+  }
+  // add to storage
+  else {
+    const data = {
+      ingredient: ingredient
+    }
+    const options = {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': 'bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJOYW1lIiwiZXhwIjoxNjgzMjc2OTg0fQ.O7_vElPxBOBzX5xHtlglOXmIEbfPw1S6fDlYPPvOOjg'
+      },
+      body: JSON.stringify(data)
+
+
+    };
+    fetch('http://localhost:8000/api/storage/postStorageItem', options)
   }
 }
 
-//http://localhost:8000/api/allIngredients
+
+function addIngredientToShoppingList(ingredient){
+  const data = {
+    ingredient: ingredient
+  }
+  const options = {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+      'Authorization': 'bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJOYW1lIiwiZXhwIjoxNjgzMjc2OTg0fQ.O7_vElPxBOBzX5xHtlglOXmIEbfPw1S6fDlYPPvOOjg'
+    },
+    body: JSON.stringify(data)
+
+
+  };
+  fetch('http://localhost:8000/api/shopping/postShoppingItem', options)
+}
+
 </script>
+
+
 
 <template>
   <div class="SearchFilterAdd">
+
     <div class="input-group">
 
+      <!-- Suchefeld Input -->
       <input type="text" class="form-control" placeholder="Suche"
              aria-label="Recipient's username with two button addons" v-model="input">
 
-      <button class="btn btn-outline-secondary" type="button"><span class="material-symbols-outlined"
-                                                                    style="padding-top: 10px">
-    search
-    </span></button>
-      <button class="btn btn-outline-secondary" type="button"><span class="material-symbols-outlined"
-                                                                    style="padding-top: 10px">
-    add
-    </span></button>
-
+      <!-- Suchfilter mit Dropdown -->
       <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
               aria-expanded="false">Filter
       </button>
@@ -61,20 +89,27 @@ function addIngredient(ingredient) {
         <li><a class="dropdown-item" href="#">Test</a></li>
       </ul>
 
-
     </div>
-    <div>
-      <ul style="list-style-type: none; display: block;">
-        <li class="testSearch" v-for="ingredient in filteredList()" :key="ingredient"
-            @click="addIngredient(ingredient)">
-          <span style="display: inline">{{ ingredient }}
-           <button class="btn btn-outline-secondary"  type="button" @click="console.log('Button 1 clicked')">
-           <span class="material-symbols-outlined" style="padding-top: 6px">add</span>
-           </button>
 
-           <button class="btn btn-outline-secondary" type="button" @click="console.log('Button 1 clicked')">
-           <span class="material-symbols-outlined" style="padding-top: 6px">add_shopping_cart</span>
-           </button>
+    <div class="container">
+      <!--gesuchte Zutaten anzeigen-->
+      <ul style="list-style-type: none; display: block;">
+        <li class="testSearch" v-for="ingredient in filteredList()" :key="ingredient">
+
+          <span style="display: inline">{{ ingredient }}
+
+            <div class="hidden-button">
+                 <!--Button: Vorratskammer hinzufügen-->
+              <button class="btn btn-outline-secondary"  type="button" @click="addIngredient(ingredient)">
+             <span class="material-symbols-outlined" style="padding-top: 6px">add</span>
+             </button>
+
+                <!--Button: Einkaufsliste hinzufügen-->
+             <button class="btn btn-outline-secondary" type="button" @click="addIngredientToShoppingList(ingredient)">
+             <span class="material-symbols-outlined" style="padding-top: 6px">add_shopping_cart</span>
+             </button>
+            </div>
+
 
           </span>
         </li>
@@ -89,9 +124,11 @@ function addIngredient(ingredient) {
 
 <style scoped>
 li {
-  display: block;
+  display: flex; /* Container für Ingredient und Buttons */
+  justify-content: space-between; /* Platzieren Sie die Buttons rechts */
+  align-items: center; /* Zentrieren Sie Ingredient und Buttons vertikal */
   font-size: 15px;
-  margin-bottom: 10px; /* added margin-bottom for spacing */
+  margin-bottom: 10px;
 }
 
 li:hover::before {
@@ -103,6 +140,15 @@ li:hover::before {
   width: 100%;
   background-color: rgba(169, 114, 114, 0.15);
   z-index: -1;
+}
+
+
+li .hidden-button {
+  display: none; /* Button standardmäßig ausblenden */
+}
+
+li:hover .hidden-button {
+  display: inline-block; /* Button beim Überfahren des Listenpunkts einblenden */
 }
 
 
