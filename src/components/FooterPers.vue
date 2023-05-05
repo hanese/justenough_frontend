@@ -1,7 +1,4 @@
-<script>
-export default {
-  name: "FooterPers"
-}
+<script setup>
 </script>
 
 
@@ -11,7 +8,7 @@ export default {
       <div class="row">
         <div class="col-md-12">
           <ul class="footer_links text-center">
-            <li>Impressum</li>
+            <li><router-link to="/impressum" style="color: #181818">Impressum</router-link></li>
             <li>Datenschutz</li>
             <li>FAQ</li>
           </ul>

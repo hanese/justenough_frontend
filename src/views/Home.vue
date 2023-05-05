@@ -72,10 +72,7 @@
       <button>Jetzt kochen</button>
     </div>
   </div>
-
-  <FooterPers>
-
-  </FooterPers>
+  <FooterPers/>
 </template>
 
 
