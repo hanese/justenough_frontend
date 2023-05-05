@@ -5,6 +5,7 @@ import Home from "@/views/Home.vue";
 import Zutaten from "@/views/Zutaten.vue";
 import Rezepte from "@/views/Rezepte.vue";
 import Einstellungen from "@/views/Einstellungen.vue";
+import Login from "@/views/Login.vue";
 
 
 const routes = [
@@ -14,6 +15,7 @@ const routes = [
     {path: '/rezepte', name: 'Rezepte', component: Rezepte},
     {path: '/', name: 'Home', component: Home},
     {path: '/einstellungen', name: 'Einstellungen', component: Einstellungen},
+    {path: '/login', name: 'Login', component: Login}
 
 
 ]
