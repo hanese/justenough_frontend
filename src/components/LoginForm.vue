@@ -21,7 +21,7 @@ export default {
     },
     methods: {
         async login() {
-            const response = await fetch('http://localhost:8000/login', {
+            const response = await fetch('http://91.107.239.206:8000/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',

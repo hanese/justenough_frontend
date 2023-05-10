@@ -14,7 +14,7 @@ export default {
         };
     },
     mounted() {
-        axios.get('http://localhost:8000')
+        axios.get('http://91.107.239.206:8000')
             .then(response => {
                 this.message = response.data;
             })

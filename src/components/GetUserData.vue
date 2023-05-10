@@ -23,7 +23,7 @@ export default {
                 return;
             }
 
-            const response = await fetch('http://localhost:8000/users/me/', {
+            const response = await fetch('http://91.107.239.206:8000/users/me/', {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
