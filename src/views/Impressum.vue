@@ -16,7 +16,7 @@
     </div>
     <div class="content">
       <h2>Verantwortlich für den Inhalt gemäß nichts</h2>
-      <p>Anschrift: Musterstraße Musternumer</p>
+      <p>Anschrift: Musterstraße Musternummer</p>
       <p>Telefonnummer: 123</p>
       <p>E-Mail Adresse: musterEmail@mail.muster</p>
     </div>

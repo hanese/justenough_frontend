@@ -17,6 +17,7 @@
   </div>
 -->
 
+  <h2 class="WillkommenH2">Willkommen bei JustEnough :-)</h2>
   <div class="card-container">
     <div class="card">
       <h2>Nudeln mit Shrimps</h2>
@@ -83,6 +84,49 @@ body {
   padding: 20px;
 }
 
+.WillkommenH2 {
+  position: relative;
+  display: inline-block;
+  font-size: 2rem;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.WillkommenH2::before{
+  content: 'Willkommen bei JustEnough';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  z-index: -1;
+  background-color: #cccccc;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.WillkommenH2:hover::before{
+  opacity: 1;
+}
+
+.WillkommenH2::after{
+  content: 'Willkommen bei JustEnough';
+  position: absolute;
+  bottom: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: 4px;
+  background-color: #cccccc;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  box-shadow: 0px 0px 5px #666666;
+}
+
+.WillkommenH2:hover::after{
+  opacity: 1;
+}
+
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -91,7 +135,7 @@ body {
 
   justify-content: center;
   align-items: center;
-  margin-top: 30%;
+  margin-top: 10%;
 }
 
 .card {
