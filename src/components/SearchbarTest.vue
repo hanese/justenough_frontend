@@ -14,7 +14,11 @@ fetch('http://localhost:8000/api/ingredients/getAll').then(response => response.
 
 const add = ["Zutat erstellen"]
 
-function filteredList() {
+async function filteredList() {
+  let recipes = await getAllRecipes()
+  debugger
+  let ids = recipes.map(recipes => recipes.id)
+  let meals = recipes.map(recipes => recipes.meal)
   if (this.input.length === 0) {
     return 0
   } else if (ingredients.filter((ingredient) => ingredient.toLowerCase().startsWith(input.value.toLowerCase())).length === 0) {
