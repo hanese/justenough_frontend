@@ -1,6 +1,7 @@
 <script setup>
 import SearchFilterAdd from "@/components/SearchFilterAddIngredients.vue";
 import SearchbarTest from "@/components/SearchbarTest.vue";
+import SearchFilterAddIngredients from "@/components/SearchFilterAddIngredients.vue";
 </script>
 
 <template>
@@ -12,7 +13,7 @@ import SearchbarTest from "@/components/SearchbarTest.vue";
 
 
     <div class="SearchFilterAdd">
-      <SearchbarTest/>
+      <SearchFilterAddIngredients/>
     </div>
 
   </div>

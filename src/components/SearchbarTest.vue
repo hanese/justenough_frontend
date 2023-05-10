@@ -1,18 +1,19 @@
 <script setup>
-
 import {ref} from "vue"
 
 let input = ref("")
-let ingredients
 
-//get all Ingredients
-fetch('http://localhost:8000/api/ingredients/getAll').then(response => response.json()).then(data => {
-  ingredients = data.map(item => item.ingredient);
+//get all recipes
+async function getAllRecipes() {
+  let response = await fetch('http://localhost:8000/api/recipes/getAll')
+  debugger
+  let data = await response.json()
+  debugger
+  return data
+}
 
-}).catch(error => console.error(error));
 
-
-const add = ["Zutat erstellen"]
+const add = ["Rezept erstellen"]
 
 async function filteredList() {
   let recipes = await getAllRecipes()
@@ -21,36 +22,10 @@ async function filteredList() {
   let meals = recipes.map(recipes => recipes.meal)
   if (this.input.length === 0) {
     return 0
-  } else if (ingredients.filter((ingredient) => ingredient.toLowerCase().startsWith(input.value.toLowerCase())).length === 0) {
+  } else if (meals.filter((meal) => meal.toLowerCase().startsWith(input.value.toLowerCase())).length === 0) {
     return add
   } else {
-    return ingredients.filter((ingredient) => ingredient.toLowerCase().startsWith(input.value.toLowerCase()))
-  }
-}
-
-
-function addIngredient(ingredient) {
-
-  if (ingredient === "Zutat erstellen") {
-    console.log("Zutat erstellen")
-  }
-  // add to storage
-  else {
-    const data = {
-      ingredient: ingredient
-    }
-    const token = getTokenFromCookie()
-    const options = {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        'Authorization': `Bearer ${token}`
-      },
-      body: JSON.stringify(data)
-
-
-    };
-    fetch('http://localhost:8000/api/storage/postStorageItem', options)
+    return meals.filter((meal) => meal.toLowerCase().startsWith(input.value.toLowerCase()))
   }
 }
 
@@ -66,21 +41,10 @@ function getTokenFromCookie() {
 }
 
 
-function addIngredientToShoppingList(ingredient){
-  const data = {
-    ingredient: ingredient
-  }
-  const token = getTokenFromCookie()
-  const options = {
-    method: 'POST',
-    headers: {
-      'content-type': 'application/json',
-      'Authorization': `Bearer ${token}`
-    },
-    body: JSON.stringify(data)
+function showWholeRecipe(){
 
-  };
-  fetch('http://localhost:8000/api/shopping/postShoppingItem', options)
+return 0
+
 }
 
 </script>
@@ -92,7 +56,7 @@ function addIngredientToShoppingList(ingredient){
 
     <div class="input-group">
 
-      <!-- Suchefeld Input -->
+      <!-- Suchfeld Input -->
       <input type="text" class="form-control" placeholder="Suche"
              aria-label="Recipient's username with two button addons" v-model="input">
 
@@ -108,26 +72,11 @@ function addIngredientToShoppingList(ingredient){
     </div>
 
     <div class="container">
-      <!--gesuchte Zutaten anzeigen-->
+      <!--gesuchte Rezepte anzeigen-->
       <ul style="list-style-type: none; display: block;">
-        <li class="testSearch" v-for="ingredient in filteredList()" :key="ingredient">
+        <li class="testSearch" v-for="meal in filteredList()" :key="meal" @click="showWholeRecipe()">
 
-          <span style="display: inline">{{ ingredient }}
-
-            <div class="hidden-button">
-                 <!--Button: Vorratskammer hinzufügen-->
-              <button class="btn btn-outline-secondary"  type="button" @click="addIngredient(ingredient)">
-             <span class="material-symbols-outlined" style="padding-top: 6px">add</span>
-             </button>
-
-                <!--Button: Einkaufsliste hinzufügen-->
-             <button class="btn btn-outline-secondary" type="button" @click="addIngredientToShoppingList(ingredient)">
-             <span class="material-symbols-outlined" style="padding-top: 6px">add_shopping_cart</span>
-             </button>
-            </div>
-
-
-          </span>
+          <span style="display: inline">{{ meal }}</span>
         </li>
       </ul>
     </div>
@@ -140,9 +89,9 @@ function addIngredientToShoppingList(ingredient){
 
 <style scoped>
 li {
-  display: flex; /* Container für Ingredient und Buttons */
-  justify-content: space-between; /* Platzieren Sie die Buttons rechts */
-  align-items: center; /* Zentrieren Sie Ingredient und Buttons vertikal */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 15px;
   margin-bottom: 10px;
 }
