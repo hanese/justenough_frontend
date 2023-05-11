@@ -7,26 +7,22 @@ import ProfileNavbar from "@/components/ProfileNavbar.vue";
 
 
 <template>
-
   <div class="header">
-
     <div>
       <NavigationNavbar/>
     </div>
 
-    <div class="header"></div>
-    <router-link to="/">
-      <h1>JustEnough</h1>
 
+    <router-link to="/">
+    <h1>JustEnough</h1>
     </router-link>
+
 
 
     <div>
       <ProfileNavbar/>
     </div>
   </div>
-
-
 </template>
 
 
@@ -44,6 +40,4 @@ h1{
   align-items: center;
   background-color: #a97272;
 }
-
-
 </style>
