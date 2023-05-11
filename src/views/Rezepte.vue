@@ -6,7 +6,7 @@ import SearchFilterAdd from "@/components/SearchFilterAddRecipes.vue";
   <div class="ZutatenHeader">
 
     <div>
-      <h1>Rezepte</h1>
+      <h1 class="WillkommenH2">Rezepte</h1>
     </div>
 
     <div class="SearchFilterAdd">
@@ -23,7 +23,15 @@ h1{
   padding-bottom: 20px;
   font-size: 30pt;
 }
-.ZutatenHeader {
 
+.WillkommenH2 {
+  transition: all 0.2s ease-in-out;
+  margin-top: 50px;
+}
+
+.WillkommenH2:hover{
+  color: #a97272;
+  transform: scale(1.1);
+  cursor: pointer;
 }
 </style>

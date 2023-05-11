@@ -5,6 +5,7 @@
 <template>
   <footer>
     <div class="container">
+      <hr class="footer_divider">
       <div class="row">
         <div class="col-md-12">
           <ul class="footer_links text-center">
@@ -56,4 +57,5 @@ footer {
   border: none;
   border-radius: 4px;
 }
+
 </style>

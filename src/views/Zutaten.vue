@@ -7,7 +7,7 @@ import SearchbarTest from "@/components/SearchbarTest.vue";
   <div class="ZutatenHeader">
 
     <div>
-      <h1>Zutaten</h1>
+      <h1 class="WillkommenH2">Zutaten</h1>
     </div>
 
 
@@ -26,7 +26,15 @@ h1 {
   font-size: 30pt;
 }
 
-.ZutatenHeader {
-
+.WillkommenH2 {
+  transition: all 0.2s ease-in-out;
+  margin-top: 50px;
 }
+
+.WillkommenH2:hover{
+  color: #a97272;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
 </style>

@@ -1,7 +1,6 @@
 <script setup>
   import FooterPers from "@/components/FooterPers.vue";
-  import LoginForm from "@/components/LoginForm.vue";
-/*
+  /*
   export default {
     data() {
       return {
@@ -40,7 +39,8 @@
     <div class="card">
       <h2>Nudeln mit Shrimps</h2>
       <p>Leckere Shrimps mit noch leckeren Nudeln</p>
-      <button class="Kochbutton">Jetzt kochen</button>
+      <div class="Kochbutton"><router-link to="/RezeptSeite" style="color: #181818">Jetzt kochen!</router-link></div>
+
     </div>
   </div>
 
@@ -112,7 +112,7 @@ body {
   color: #666;
 }
 
-.card button {
+.Kochbutton {
   background-color: #4CAF50;
   color: #fff;
   border: none;
@@ -131,29 +131,12 @@ body {
   cursor: pointer;
 }
 
-
-.search-container {
-  position: relative;
-}
-
 input[type="text"] {
   width: 100%;
   height: 50px; /* Hier wird die Höhe der Suchleiste festgelegt */
   padding: 10px;
   font-size: 16px;
   border: none;
-  border-radius: 5px;
-}
-
-.dropdown {
-  position: absolute;
-  top: 50px; /* Hier wird die Dropdown-Liste unterhalb der Suchleiste positioniert */
-  left: 0;
-  z-index: 1;
-  background-color: #f1f1f1;
-  min-width: 200px;
-  overflow: auto;
-  max-height: 200px;
   border-radius: 5px;
 }
 
