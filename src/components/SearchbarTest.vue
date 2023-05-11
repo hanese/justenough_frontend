@@ -57,7 +57,7 @@ function newPage(wholeMeal){
 
   return {
     name: 'AktuellesRezept',
-    params: { wholeMeal: wholeMeal }
+    query: { id: wholeMeal }
   };
 }
 

@@ -4,7 +4,7 @@ import 'bootstrap';
 import './assets/main.css'
 import router from './router'
 import axios from 'axios'
-import { defineProps } from 'vue';
+
 
 createApp(App).use(router).mount('#app')
 
