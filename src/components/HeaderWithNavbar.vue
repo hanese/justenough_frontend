@@ -14,8 +14,8 @@ import ProfileNavbar from "@/components/ProfileNavbar.vue";
 
 <!-- linke Seite Navbar mit Dropdown -->
     <div class="navigation-navbar">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="float: left">
-      <span class="material-symbols-outlined" style="padding-top: 6px">menu</span>
+      <button class="btn btn-secondary dropdown-toggle rounded-circle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="float: left; border: none; background-color: transparent;">
+      <span class="material-symbols-outlined" style="padding-top: 6px; font-size: 1.5rem;">menu</span>
       </button>
       <div>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -40,7 +40,7 @@ import ProfileNavbar from "@/components/ProfileNavbar.vue";
 
 <!-- rechte Seite Navbar mit Dropdown -->
     <div class="profile-navbar">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="float: right">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="float: right; border: none; background-color: transparent;">
         <span class="material-symbols-outlined" style="padding-top: 6px">settings</span>
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -76,6 +76,9 @@ h1{
 
 .navigation-navbar{
   justify-content: flex-start;
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
 }
 
 .profile-navbar{
