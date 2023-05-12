@@ -1,61 +1,37 @@
-<script setup>
+<script>
+export default {
+  data(){
+    return {
+      topics: ['Pommestitel'],
+      ingredients: ['250g Pommes', '200g mehr Pommes', '150g Pommes', 'Hannes'],
+      descriptions: ['Hier steht dann wie das Rezept gekocht werden soll. Pommes mit Pommes und dazu Pommes.']
+    };
+  },
+};
 </script>
 
 <template>
 
-  <footer>
-  </footer>
+    <h1 class="TopicFood" v-for="topic in topics" :key="topic">{{ topic }}</h1>
+    <hr class="footer_divider">
+    <h3>Zutaten</h3>
+    <ul>
+      <li v-for="ingredient in ingredients" :key="ingredient">{{ ingredient }}</li>
+    </ul>
+    <hr class="footer_divider">
+
+  <FooterPers/>
 </template>
 
 <style>
-
-header {
-  background-color: #f1f1f1;
-  color: #181818;
-  padding: 10px;
-  text-align: center;
-}
-
-.company {
-  margin-bottom: 20px;
-  line-height: 1.8;
-}
-
-.company h2{
-  margin-top: 20px;
-}
-
-.content h2{
+.TopicFood{
+  text-align: left;
   margin-top: 30px;
+}
+
+.footer_divider {
+  border-top: 1px solid #666666;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
-
-.content p{
-  margin-top: 0;
-  margin-bottom: 10px;
-  line-height: 1.8;
-}
-
-footer {
-  background-color: #f1f1f1;
-  padding: 10px;
-  text-align: center;
-}
-
-@media screen and (min-width: 768px){
-  main{
-    display: flex;
-    flex-direction: row;
-  }
-
-  .company {
-    flex: 1;
-    margin-right: 20px;
-  }
-
-  .content {
-    flex: 2;
-  }
-}
-
 </style>

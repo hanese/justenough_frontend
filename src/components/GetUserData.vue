@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button @click="getUserInfo">Get User Info</button>
+
         <div v-if="userInfo">
             <h2>name: {{ userInfo.name }}</h2>
             <p>password: {{ userInfo.password }}</p>

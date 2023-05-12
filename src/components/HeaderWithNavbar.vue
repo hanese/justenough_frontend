@@ -24,6 +24,7 @@ import ProfileNavbar from "@/components/ProfileNavbar.vue";
           <li><router-link to="/rezepte" class="dropdown-item" style=" color: #a97272">Rezepte</router-link></li>
           <li><hr class="dropdown-divider"></li>
           <li><router-link to="/einkaufsliste" class="dropdown-item" style=" color: #a97272">Einkaufsliste</router-link></li>
+
         </ul>
       </div>
     </div>
@@ -46,6 +47,8 @@ import ProfileNavbar from "@/components/ProfileNavbar.vue";
         <li><router-link to="/einstellungen" class="dropdown-item" style=" color: #a97272">Einstellungen</router-link></li>
         <li><hr class="dropdown-divider"></li>
         <li><router-link to="/profil" class="dropdown-item" style=" color: #a97272">Profil</router-link></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><router-link to="/login" class="dropdown-item" style=" color: #a97272">Login</router-link></li>
       </ul>
     </div>
 <!--     -->

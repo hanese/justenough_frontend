@@ -7,6 +7,9 @@ import Rezepte from "@/views/Rezepte.vue";
 import Einstellungen from "@/views/Einstellungen.vue";
 import Impressum from "@/views/Impressum.vue";
 import RezeptSeite from "@/views/RezeptSeite.vue";
+import Login from "@/views/Login.vue";
+import AktuellesRezept from "@/views/AktuellesRezept.vue";
+
 
 const routes = [
     {path: '/profil', name: 'Profil', component: Profil},
@@ -17,6 +20,9 @@ const routes = [
     {path: '/einstellungen', name: 'Einstellungen', component: Einstellungen},
     {path: '/impressum', name: 'Impressum', component: Impressum},
     {path: '/rezeptseite', name: 'RezeptSeite', component: RezeptSeite},
+    {path: '/login', name: 'Login', component: Login},
+    {path: '/aktuellesRezept', name: 'AktuellesRezept', component: AktuellesRezept}
+
 
 ]
 const router = createRouter({

@@ -1,52 +1,80 @@
 <script setup>
-
 import {ref} from "vue"
 
 let input = ref("")
-const ingredients = ["Salz", "Nudeln", "Käse", "Kartoffel"]
-const add = ["Zutat erstellen"]
+
+//get all recipes
+let meals = ref([])
+let ids = ref([])
+let recipes = ref({})
+
+async function fetchData() {
+  try {
+    const response = await fetch('http://localhost:8000/api/recipes/getAll')
+    recipes = await response.json()
+
+    meals = recipes.map((mealData) => mealData.meal)
+    ids = recipes.map((mealData) => mealData.id)
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+fetchData()
+
+const add = ["Rezept erstellen"]
 
 function filteredList() {
   if (this.input.length === 0) {
     return 0
-  } else if (ingredients.filter((ingredient) => ingredient.toLowerCase().startsWith(input.value.toLowerCase())).length === 0) {
+  } else if (meals.filter((meal) => meal.toLowerCase().includes(input.value.toLowerCase())).length === 0) {
     return add
   } else {
-    return ingredients.filter((ingredient) => ingredient.toLowerCase().startsWith(input.value.toLowerCase()))
+    let filteredRecipes = []
+    for (let i = 0; i < recipes.length; i++) {
+      if (recipes[i].meal.toLowerCase().includes(input.value.toLowerCase())) {
+        filteredRecipes.push(recipes[i])
+      }
+    }
+    return filteredRecipes
   }
 }
 
-
-function addIngredient(ingredient) {
-
-  if (ingredient === "Zutat erstellen") {
-    console.log("Zutat erstellen")
-  } else {
-    console.log("Zutat")
+function getTokenFromCookie() {
+  const cookies = document.cookie.split(';');
+  for (let i = 0; i < cookies.length; i++) {
+    const cookie = cookies[i].trim();
+    if (cookie.startsWith('access_token=')) {
+      return cookie.substring('access_token='.length, cookie.length);
+    }
   }
+  return null;
 }
 
-//http://localhost:8000/api/allIngredients
+
+//function um ganzes Rezept in neuer Seite anzuzeigen
+function newPage(wholeMeal){
+
+  return {
+    name: 'AktuellesRezept',
+    query: { id: wholeMeal }
+  };
+}
+
+
 </script>
+
 
 <template>
   <div class="SearchFilterAdd">
+
     <div class="input-group">
 
-
+      <!-- Suchfeld Input -->
       <input type="text" class="form-control" placeholder="Suche"
              aria-label="Recipient's username with two button addons" v-model="input">
 
-
-      <button class="btn btn-outline-secondary" type="button"><span class="material-symbols-outlined"
-                                                                    style="padding-top: 10px">
-    search
-    </span></button>
-      <button class="btn btn-outline-secondary" type="button"><span class="material-symbols-outlined"
-                                                                    style="padding-top: 10px">
-    add
-    </span></button>
-
+      <!-- Suchfilter mit Dropdown -->
       <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
               aria-expanded="false">Filter
       </button>
@@ -55,12 +83,14 @@ function addIngredient(ingredient) {
         <li><a class="dropdown-item" href="#">Test</a></li>
       </ul>
 
-
     </div>
-    <div>
+
+    <div class="container">
+      <!--gesuchte Rezepte anzeigen-->
       <ul style="list-style-type: none; display: block;">
-        <li class="testSearch" v-for="ingredient in filteredList()" :key="ingredient" @click="addIngredient(ingredient)">
-          <span style="display: inline">{{ ingredient }}</span>
+        <li class="testSearch" v-for="meal in filteredList()" :key="meal" >
+
+          <router-link :to="newPage(meal.id)"><span style="display: inline">{{ meal.meal }}</span></router-link>
         </li>
       </ul>
     </div>
@@ -73,9 +103,11 @@ function addIngredient(ingredient) {
 
 <style scoped>
 li {
-  display: inline;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 15px;
-  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 li:hover::before {
@@ -85,8 +117,17 @@ li:hover::before {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #5955554F;
+  background-color: rgba(169, 114, 114, 0.15);
   z-index: -1;
+}
+
+
+li .hidden-button {
+  display: none; /* Button standardmäßig ausblenden */
+}
+
+li:hover .hidden-button {
+  display: inline-block; /* Button beim Überfahren des Listenpunkts einblenden */
 }
 
 
