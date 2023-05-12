@@ -11,6 +11,11 @@ import SearchbarTest from "@/components/SearchbarTest.vue";
       <h1 class="WillkommenH2">Rezepte</h1>
     </div>
 
+    <div>
+
+      <router-link to="WhatCanICook"><h2>What can I cook?</h2></router-link>
+    </div>
+
     <div class="SearchFilterAdd">
       <SearchbarTest/>
     </div>

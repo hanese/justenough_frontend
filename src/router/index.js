@@ -9,6 +9,7 @@ import Impressum from "@/views/Impressum.vue";
 import RezeptSeite from "@/views/RezeptSeite.vue";
 import Login from "@/views/Login.vue";
 import AktuellesRezept from "@/views/AktuellesRezept.vue";
+import WhatCanICook from "@/views/WhatCanICook.vue";
 
 
 const routes = [
@@ -21,7 +22,8 @@ const routes = [
     {path: '/impressum', name: 'Impressum', component: Impressum},
     {path: '/rezeptseite', name: 'RezeptSeite', component: RezeptSeite},
     {path: '/login', name: 'Login', component: Login},
-    {path: '/aktuellesRezept', name: 'AktuellesRezept', component: AktuellesRezept}
+    {path: '/aktuellesRezept', name: 'AktuellesRezept', component: AktuellesRezept},
+    {path: '/whatCanICook', name: 'WhatCanICook', component: WhatCanICook}
 
 
 ]
