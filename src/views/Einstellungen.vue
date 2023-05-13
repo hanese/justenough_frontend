@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="WillkommenH2">Einstellungen</h1>
+    <h1 class="WillkommenH2">Settings</h1>
   </div>
 </template>
 

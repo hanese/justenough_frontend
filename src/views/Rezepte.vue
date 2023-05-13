@@ -8,7 +8,7 @@ import SearchbarTest from "@/components/SearchbarTest.vue";
   <div class="ZutatenHeader">
 
     <div>
-      <h1 class="WillkommenH2">Rezepte</h1>
+      <h1 class="WillkommenH2">Recipes</h1>
     </div>
 
     <div>

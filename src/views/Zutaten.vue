@@ -8,7 +8,7 @@ import SearchFilterAddIngredients from "@/components/SearchFilterAddIngredients.
   <div class="ZutatenHeader">
 
     <div>
-      <h1 class="WillkommenH2">Zutaten</h1>
+      <h1 class="WillkommenH2">Ingredients</h1>
     </div>
 
 

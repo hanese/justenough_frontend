@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="WillkommenH2">Einkaufsliste</h1>
+    <h1 class="WillkommenH2">Shopping List</h1>
   </div>
 </template>
 
