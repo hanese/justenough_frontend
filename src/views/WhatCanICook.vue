@@ -1,4 +1,5 @@
 <script setup>
+import FooterPers from "@/components/FooterPers.vue";
 function getTokenFromCookie() {
     const cookies = document.cookie.split(';');
     for (let i = 0; i < cookies.length; i++) {
@@ -38,6 +39,8 @@ getRecipesByStorageIngredients()
 <template>
     <h1>You can cook the following recipes:</h1>
 
+
+  <FooterPers/>
 </template>
 
 <style scoped>

@@ -3,13 +3,11 @@
 import NavigationNavbar from "@/components/NavigationNavbar.vue";
 import ProfileNavbar from "@/components/ProfileNavbar.vue";
 */
-
 </script>
 
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
 
 <template>
-
-
   <div class="header">
 
 <!-- linke Seite Navbar mit Dropdown -->
@@ -52,7 +50,6 @@ import ProfileNavbar from "@/components/ProfileNavbar.vue";
       </ul>
     </div>
 <!--     -->
-
   </div>
 
 </template>
@@ -65,7 +62,7 @@ h1{
   margin: 0 auto;
 }
 .header {
-  font-family: "Helvetica Neue", serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 50px;
   color: White;
   display: flex;

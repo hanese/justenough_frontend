@@ -1,7 +1,7 @@
 <script setup>
-
 import LoginForm from "@/components/LoginForm.vue";
 import GetUserData from "@/components/GetUserData.vue";
+import FooterPers from "@/components/FooterPers.vue";
 </script>
 
 <template>
@@ -9,6 +9,7 @@ import GetUserData from "@/components/GetUserData.vue";
   <LoginForm/>
   <GetUserData/>
 
+  <FooterPers/>
 </template>
 
 

@@ -1,8 +1,9 @@
 <script setup>
+import FooterPers from "@/components/FooterPers.vue";
 </script>
 
 <template>
-  <main>
+  <main class="wrapper">
     <div class="company">
       <h2>JustEnough:</h2>
       <p>Straße und Hausnummer</p>
@@ -21,43 +22,33 @@
       <p>E-Mail Adresse: musterEmail@mail.muster</p>
     </div>
   </main>
-  <footer>
-  </footer>
+
+  <FooterPers/>
 </template>
 
 <style>
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-header {
-  background-color: #f1f1f1;
-  color: #181818;
-  padding: 10px;
+.company, .content {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0px 3px 3px #ccc;
+}
+
+.company h2, .content h2{
   text-align: center;
 }
 
-.company {
-  margin-bottom: 20px;
-  line-height: 1.8;
-}
-
-.company h2{
-  margin-top: 20px;
-}
-
-.content h2{
-  margin-top: 30px;
-  margin-bottom: 20px;
-}
-
-.content p{
-  margin-top: 0;
+.company p, .content p{
   margin-bottom: 10px;
   line-height: 1.8;
-}
-
-footer {
-  background-color: #f1f1f1;
-  padding: 10px;
-  text-align: center;
 }
 
 @media screen and (min-width: 768px){
@@ -66,14 +57,14 @@ footer {
     flex-direction: row;
   }
 
-  .company {
+  .company{
     flex: 1;
     margin-right: 20px;
   }
 
-  .content {
+  .content{
     flex: 2;
+    margin-left: 20px;
   }
 }
-
 </style>

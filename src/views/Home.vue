@@ -40,7 +40,6 @@
       <h2>Nudeln mit Shrimps</h2>
       <p>Leckere Shrimps mit noch leckeren Nudeln</p>
       <div class="Kochbutton"><router-link to="/RezeptSeite" style="color: #181818">Jetzt kochen!</router-link></div>
-
     </div>
   </div>
 
@@ -56,11 +55,11 @@
 </template>
 
 
-
 <style>
 body {
   background-color: #f1f1f1;
   padding: 20px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .WillkommenH2 {
@@ -69,7 +68,6 @@ body {
 }
 
 .WillkommenH2:hover{
-  color: #a97272;
   transform: scale(1.1);
   cursor: pointer;
 }
@@ -79,7 +77,6 @@ body {
   flex-wrap: wrap;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 20px;
-
   justify-content: center;
   align-items: center;
   margin-top: 10%;

@@ -2,6 +2,7 @@
 import SearchFilterAdd from "@/components/SearchFilterAddRecipes.vue";
 import SearchFilterAddRecipes from "@/components/SearchFilterAddRecipes.vue";
 import SearchbarTest from "@/components/SearchbarTest.vue";
+import FooterPers from "@/components/FooterPers.vue";
 </script>
 
 <template>
@@ -22,6 +23,7 @@ import SearchbarTest from "@/components/SearchbarTest.vue";
 
   </div>
 
+  <FooterPers/>
 </template>
 
 <style scoped>
@@ -37,7 +39,6 @@ h1{
 }
 
 .WillkommenH2:hover{
-  color: #a97272;
   transform: scale(1.1);
   cursor: pointer;
 }

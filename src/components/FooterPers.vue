@@ -48,7 +48,7 @@ footer {
 }
 
 .footer_divider {
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #666666;
   margin-top: 20px;
   margin-bottom: 20px;
 }
