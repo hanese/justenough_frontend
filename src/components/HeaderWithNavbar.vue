@@ -1,8 +1,4 @@
 <script setup>
-/*
-import NavigationNavbar from "@/components/NavigationNavbar.vue";
-import ProfileNavbar from "@/components/ProfileNavbar.vue";
-*/
 
 </script>
 
@@ -10,7 +6,7 @@ import ProfileNavbar from "@/components/ProfileNavbar.vue";
 <template>
 
 
-  <div class="header">
+  <div class="header" >
 
 <!-- linke Seite Navbar mit Dropdown -->
     <div class="navigation-navbar">
@@ -32,7 +28,7 @@ import ProfileNavbar from "@/components/ProfileNavbar.vue";
 
 
 <!-- Mitte Navbar mit Logo -->
-    <router-link to="/">
+    <router-link to="/home">
     <h1 class="JustEnoughH1">JustEnough</h1>
     </router-link>
 <!--     -->

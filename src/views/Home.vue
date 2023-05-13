@@ -1,38 +1,9 @@
 <script setup>
   import FooterPers from "@/components/FooterPers.vue";
-  /*
-  export default {
-    data() {
-      return {
-        cards: [
-          { id: 1, title: "Nudeln Numero 1", text: "Nudeln Beschreibung" },
-          { id: 1, title: "Nudeln Numero 1", text: "Nudeln Beschreibung" },
-          { id: 1, title: "Nudeln Numero 1", text: "Nudeln Beschreibung" },
-        ],
-      };
-    },
-    methods: {
-      addCard() {
-        this.cards.push({ id: this.cards.length + 1, title: 'Card ${this.cards.length + 1}', text: 'Text für Karte ${this.cards.lenght + 1}' });
-      },
-    },
-  };
-*/
+
 </script>
 
 <template>
-  <!--
-  <div class="search-container">
-    <input type="text" placeholder="Search...">
-    <div class="dropdown">
-      <ul>
-        <li>Result 1</li>
-        <li>Result 2</li>
-        <li>Result 3</li>
-      </ul>
-    </div><
-  </div>
--->
 
   <h2 class="WillkommenH2">Willkommen bei JustEnough :-)</h2>
   <div class="card-container">
@@ -44,14 +15,6 @@
     </div>
   </div>
 
-  <!--
-    <div class="card-container">
-      <div class="card" v-for="(card, index) in cards" :key="index">
-        <h2>{{ card.title }}</h2>
-        <p>{{ card.text }}</p>
-      </div>
-    </div>
-  -->
   <FooterPers/>
 </template>
 
