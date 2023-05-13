@@ -4,7 +4,6 @@ import Einkaufsliste from "@/views/Einkaufsliste.vue";
 import Home from "@/views/Home.vue";
 import Zutaten from "@/views/Zutaten.vue";
 import Rezepte from "@/views/Rezepte.vue";
-import Einstellungen from "@/views/Einstellungen.vue";
 import Impressum from "@/views/Impressum.vue";
 import RezeptSeite from "@/views/RezeptSeite.vue";
 import Login from "@/views/Login.vue";
@@ -18,7 +17,6 @@ const routes = [
     {path: '/zutaten', name: 'Zutaten', component: Zutaten},
     {path: '/rezepte', name: 'Rezepte', component: Rezepte},
     {path: '/', name: 'Home', component: Home},
-    {path: '/einstellungen', name: 'Einstellungen', component: Einstellungen},
     {path: '/impressum', name: 'Impressum', component: Impressum},
     {path: '/rezeptseite', name: 'RezeptSeite', component: RezeptSeite},
     {path: '/login', name: 'Login', component: Login},

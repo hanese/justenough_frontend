@@ -44,8 +44,6 @@ import ProfileNavbar from "@/components/ProfileNavbar.vue";
         <span class="material-symbols-outlined" style="padding-top: 6px">settings</span>
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <li><router-link to="/einstellungen" class="dropdown-item" style=" color: #a97272">Einstellungen</router-link></li>
-        <li><hr class="dropdown-divider"></li>
         <li><router-link to="/profil" class="dropdown-item" style=" color: #a97272">Profil</router-link></li>
         <li><hr class="dropdown-divider"></li>
         <li><router-link to="/login" class="dropdown-item" style=" color: #a97272">Login</router-link></li>
