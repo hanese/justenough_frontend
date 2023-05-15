@@ -35,9 +35,9 @@ function getTokenFromCookie() {
 
 <template>
   <div>
-    <h1>Test</h1>
+    <h1>Storage</h1>
     <ul v-if="!isLoading">
-      <li v-for="ingredient in ingredients" :key="ingredient">{{ ingredient }}</li>
+      <li v-for="ingredient in ingredients" :key="ingredient">{{ ingredient }} <button><span class="material-symbols-outlined" style="padding-top: 6px">delete</span></button></li>
     </ul>
   </div>
 </template>
