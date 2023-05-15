@@ -48,7 +48,7 @@ onMounted(async () => {
   <h1 v-else>You can cook the following recipes:</h1>
   <ul v-if="!isLoading">
     <li v-for="recipe in recipes" :key="recipe.id">
-      {{ recipe.area }}
+      {{ recipe.meal }}
     </li>
   </ul>
 
