@@ -17,7 +17,7 @@ import SearchbarTest from "@/components/SearchbarTest.vue";
     </div>
 
     <div class="SearchFilterAdd">
-      <SearchbarTest/>
+      <SearchFilterAddRecipes/>
     </div>
 
   </div>
