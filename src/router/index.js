@@ -34,7 +34,16 @@ const router = createRouter({
     routes,
 })
 
-
+function getCookie() {
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].trim();
+        if (cookie.startsWith('access_token=')) {
+            return cookie.substring('access_token='.length, cookie.length);
+        }
+    }
+    return null;
+}
 router.beforeEach((to, from, next) => {
     const isLoggedIn = store.state.isLoggedIn;
     const requiresAuth = to.matched.some(route => route.meta.requiresAuth);

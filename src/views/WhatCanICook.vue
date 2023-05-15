@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import {ref, onMounted} from 'vue';
 
 let recipes = ref([]);
 let isLoading = ref(true);
@@ -13,6 +13,14 @@ function getTokenFromCookie() {
     }
   }
   return null;
+}
+
+function newPage(wholeMeal) {
+
+  return {
+    name: 'AktuellesRezept',
+    query: {id: wholeMeal}
+  };
 }
 
 async function getRecipesByStorageIngredients() {
@@ -47,9 +55,14 @@ onMounted(async () => {
   <h1 v-if="isLoading">Loading...</h1>
   <h1 v-else>You can cook the following recipes:</h1>
   <ul v-if="!isLoading">
+
+
     <li v-for="recipe in recipes" :key="recipe.id">
-      {{ recipe.meal }}
+      <router-link :to="newPage(recipe.id)">
+        <span>{{ recipe.meal }}</span>
+      </router-link>
     </li>
+
   </ul>
 
 </template>
