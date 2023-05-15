@@ -8,7 +8,7 @@ let meals = ref([])
 let ids = ref([])
 let recipes = ref({})
 
-async function fetchData() {
+async function fetchAllMeals() {
   try {
     const response = await fetch('http://localhost:8000/api/recipes/getAll')
     recipes = await response.json()
@@ -19,11 +19,13 @@ async function fetchData() {
     console.error(error)
   }
 }
+// get all Recipes
+fetchAllMeals()
 
-fetchData()
-
+// if there is no match found, the "ingredient" add is shown to add it manually to your custom recipes
 const add = ["Rezept erstellen"]
 
+// filters the recipes by the letters typed in
 function filteredList() {
   if (this.input.length === 0) {
     return 0

@@ -9,9 +9,9 @@ import Login from "@/views/Login.vue";
 import AktuellesRezept from "@/views/AktuellesRezept.vue";
 import WhatCanICook from "@/views/WhatCanICook.vue";
 import StartLogin from "@/views/StartLogin.vue";
-import store from "@/store";
 import Vorratskammer from "@/views/Vorratskammer.vue";
 import Registrierung from "@/views/Registrierung.vue";
+import store from "@/store";
 
 const routes = [
     {path: '/profil', name: 'Profil', component: Profil, meta: { requiresAuth: true }},
@@ -34,23 +34,29 @@ const router = createRouter({
     routes,
 })
 
-function getCookie() {
+// performs an HTTP Request to get the Token Expiry
+async function getCookieExpiry() {
     const cookies = document.cookie.split(';');
     for (let i = 0; i < cookies.length; i++) {
         const cookie = cookies[i].trim();
         if (cookie.startsWith('access_token=')) {
-            return cookie.substring('access_token='.length, cookie.length);
+            const cookieValue = cookie.substring('access_token='.length, cookie.length);
+            const response = await fetch("http://localhost:8000/api/token/expiry/"+ cookieValue)
+            return new Date(await response.json())
         }
     }
     return null;
 }
-router.beforeEach((to, from, next) => {
-    const cookie = getCookie()
-    const isLoggedIn = store.state.isLoggedIn;
+router.beforeEach(async (to, from, next) => {
+    // checks if Bearer Token is expired
+    const isExpired = await getCookieExpiry() < new Date()
+    // checks if the requested site requires auth
     const requiresAuth = to.matched.some(route => route.meta.requiresAuth);
-    if ((requiresAuth && !isLoggedIn)) {
-        next({ name: 'StartLogin' }); // Benutzer wird zur Anmeldeseite weitergeleitet
+    if ((requiresAuth && !isExpired)) {
+        // redirect to Login
+        next({name: 'StartLogin'});
     } else {
+        // redirect to requested Component
         next();
     }
 });
