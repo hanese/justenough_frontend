@@ -11,7 +11,7 @@ import WhatCanICook from "@/views/WhatCanICook.vue";
 import StartLogin from "@/views/StartLogin.vue";
 import store from "@/store";
 import Vorratskammer from "@/views/Vorratskammer.vue";
-
+import Registrierung from "@/views/Registrierung.vue";
 
 const routes = [
     {path: '/profil', name: 'Profil', component: Profil, meta: { requiresAuth: true }},
@@ -24,6 +24,7 @@ const routes = [
     {path: '/aktuellesRezept', name: 'AktuellesRezept', component: AktuellesRezept, meta: { requiresAuth: true }},
     {path: '/whatCanICook', name: 'WhatCanICook', component: WhatCanICook, meta: { requiresAuth: true }},
     {path: '/vorratskammer', name: 'Vorratskammer', component: Vorratskammer, meta: { requiresAuth: true }},
+    {path: '/registrierung', name: 'Registrierung', component: Registrierung},
     {path: '/', name: 'StartLogin', component: StartLogin}
 
 

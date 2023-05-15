@@ -10,6 +10,9 @@
         <input type="password" id="password" class="form-control" v-model="password">
       </div>
       <button type="submit" class="btn btn-primary">Login</button>
+      <router-link to="/Registrierung">
+        <button type="submit" class="btn btn-primary">Registrieren</button>
+      </router-link>
     </form>
   </div>
 </template>
