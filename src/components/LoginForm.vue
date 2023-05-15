@@ -15,28 +15,37 @@
 </template>
 
 <script>
+import {useStore} from 'vuex';
+import store from "@/store";
+
 export default {
-    data() {
-        return {
-            username: '',
-            password: '',
-            token: '',
-        };
-    },
-    methods: {
-        async login() {
-            const response = await fetch('http://localhost:8000/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: `grant_type=password&username=${this.username}&password=${this.password}`,
-            });
-            const data = await response.json();
-            this.token = data.access_token;
-            document.cookie = `access_token=${this.token}; expires=${new Date(data.expires_in * 1000)}`;
+  data() {
+    return {
+      username: '',
+      password: '',
+      token: '',
+    };
+  },
+  methods: {
+    async login() {
+      const response = await fetch('http://localhost:8000/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
+        body: `grant_type=password&username=${this.username}&password=${this.password}`,
+      });
+      const data = await response.json();
+      if (response.status === 200) {
+        await store.dispatch('performLogin');
+
+        this.token = data.access_token;
+        const now = new Date()
+        document.cookie = `access_token=${this.token}; expires=${new Date(now.getTime() + 1800000)}`;
+        await this.$router.push('/home');
+      }
     },
+  },
 };
 </script>
 

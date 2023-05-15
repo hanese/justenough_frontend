@@ -16,7 +16,7 @@ const routes = [
     {path: '/profil', name: 'Profil', component: Profil, meta: { requiresAuth: true }},
     {path: '/einkaufsliste', name: 'Einkaufsliste', component: Einkaufsliste, meta: { requiresAuth: true }},
     {path: '/zutaten', name: 'Zutaten', component: Zutaten, meta: { requiresAuth: true }},
-    {path: '/rezepte', name: 'Rezepte', component: Rezepte},
+    {path: '/rezepte', name: 'Rezepte', component: Rezepte, meta: { requiresAuth: true }},
     {path: '/home', name: 'Home', component: Home, meta: { requiresAuth: true }},
     {path: '/impressum', name: 'Impressum', component: Impressum, meta: { requiresAuth: true }},
     {path: '/login', name: 'Login', component: Login, meta: { requiresAuth: true }},
