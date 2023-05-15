@@ -9,9 +9,13 @@ import FooterPers from "@/components/FooterPers.vue";
   <div class="ZutatenHeader">
 
     <div>
-      <h1 class="WillkommenH2">Zutaten</h1>
+      <h1 class="WillkommenH2">Ingredients</h1>
     </div>
 
+    <div>
+
+      <router-link to="Vorratskammer"><h2>storage</h2></router-link>
+    </div>
 
     <div class="SearchFilterAdd">
       <SearchFilterAddIngredients/>

@@ -9,7 +9,7 @@ import FooterPers from "@/components/FooterPers.vue";
   <div class="ZutatenHeader">
 
     <div>
-      <h1 class="WillkommenH2">Rezepte</h1>
+      <h1 class="WillkommenH2">Recipes</h1>
     </div>
 
     <div>
@@ -18,7 +18,7 @@ import FooterPers from "@/components/FooterPers.vue";
     </div>
 
     <div class="SearchFilterAdd">
-      <SearchbarTest/>
+      <SearchFilterAddRecipes/>
     </div>
 
   </div>

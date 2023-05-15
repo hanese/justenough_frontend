@@ -1,13 +1,18 @@
 <script setup>
-/*
-import NavigationNavbar from "@/components/NavigationNavbar.vue";
-import ProfileNavbar from "@/components/ProfileNavbar.vue";
-*/
+import store from "@/store";
+import router from "@/router";
+
+const logout = () => {
+  store.dispatch('performLogout');
+  router.push('/');
+};
 </script>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
 
 <template>
+
+
   <div class="header">
 
 <!-- linke Seite Navbar mit Dropdown -->
@@ -30,7 +35,7 @@ import ProfileNavbar from "@/components/ProfileNavbar.vue";
 
 
 <!-- Mitte Navbar mit Logo -->
-    <router-link to="/">
+    <router-link to="/home">
     <h1 class="JustEnoughH1">JustEnough</h1>
     </router-link>
 <!--     -->
@@ -42,14 +47,13 @@ import ProfileNavbar from "@/components/ProfileNavbar.vue";
         <span class="material-symbols-outlined" style="padding-top: 6px">settings</span>
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <li><router-link to="/einstellungen" class="dropdown-item" style=" color: #a97272">Einstellungen</router-link></li>
-        <li><hr class="dropdown-divider"></li>
         <li><router-link to="/profil" class="dropdown-item" style=" color: #a97272">Profil</router-link></li>
         <li><hr class="dropdown-divider"></li>
-        <li><router-link to="/login" class="dropdown-item" style=" color: #a97272">Login</router-link></li>
+        <li @click="logout" class="dropdown-item">Logout</li>
       </ul>
     </div>
 <!--     -->
+
   </div>
 
 </template>

@@ -28,12 +28,12 @@
 <template>
 
   <h2 class="WillkommenH2">Willkommen bei JustEnough :-)</h2>
-  <!--
   <div class="card-container">
     <div class="card">
       <h2>Nudeln mit Shrimps</h2>
       <p>Leckere Shrimps mit noch leckeren Nudeln</p>
       <div class="Kochbutton"><router-link to="/RezeptSeite" style="color: #181818">Jetzt kochen!</router-link></div>
+
     </div>
   </div>
   -->
@@ -50,6 +50,7 @@
 
   <FooterPers/>
 </template>
+
 
 
 <style>

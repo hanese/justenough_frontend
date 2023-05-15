@@ -1,8 +1,4 @@
 <script setup>
-import FooterPers from "@/components/FooterPers.vue";
-</script>
-
-<script setup>
 import { ref, onMounted } from 'vue';
 
 let ingredients = ref([]);
@@ -19,10 +15,9 @@ onMounted(async () => {
     },
 
   };
-  const storageResponse = await fetch('http://localhost:8000/api/shopping/getShoppingItems', options)
+  const storageResponse = await fetch('http://localhost:8000/api/storage/getStorage', options)
   const storage = await storageResponse.json()
-  ingredients = storage.map(ingredient => ingredient.shopping_item)
-  debugger
+  ingredients = storage.map(ingredient => ingredient.item)
   isLoading.value = false;
 })
 function getTokenFromCookie() {
@@ -45,20 +40,10 @@ function getTokenFromCookie() {
       <li v-for="ingredient in ingredients" :key="ingredient">{{ ingredient }}</li>
     </ul>
   </div>
-
-  <FooterPers/>
-
 </template>
 
-<style>
-.WillkommenH2 {
-  text-align: center;
-  transition: all 0.2s ease-in-out;
-  margin-top: 50px;
-}
 
-.WillkommenH2:hover{
-  transform: scale(1.1);
-  cursor: pointer;
-}
+
+<style scoped>
+
 </style>
