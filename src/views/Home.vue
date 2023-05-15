@@ -1,51 +1,33 @@
 <script setup>
   import FooterPers from "@/components/FooterPers.vue";
-  import { Swiper, SwiperSlide } from "vue-awesome-swiper";
-  import "swiper/swiper-bundle.css";
-  import {ref} from "vue";
+  import { ref } from "vue";
+  import { GSCarousel } from 'gitart-scroll-carousel';
 
-  /*
+
   const cards = ref([
   { id: 1, title: "Nudeln Numero 1", text: "Nudeln Beschreibung" },
-  { id: 1, title: "Nudeln Numero 1", text: "Nudeln Beschreibung" },
-  { id: 1, title: "Nudeln Numero 1", text: "Nudeln Beschreibung" },
+  { id: 2, title: "Nudeln Numero 2", text: "Nudeln Beschreibung" },
+  { id: 3, title: "Nudeln Numero 3", text: "Nudeln Beschreibung" },
+  { id: 4, title: "Nudeln Numero 4", text: "Nudeln Beschreibung" },
+  { id: 5, title: "Nudeln Numero 5", text: "Nudeln Beschreibung" },
+  { id: 6, title: "Nudeln Numero 6", text: "Nudeln Beschreibung" },
+  { id: 7, title: "Nudeln Numero 7", text: "Nudeln Beschreibung" },
   ]);
 
-  const swiperOptions = ref({
-    navigation: true,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
-  });
-
-  function addCard() {
-    const new
-  }
-  */
 </script>
 
 <template>
-
   <h2 class="WillkommenH2">Willkommen bei JustEnough :-)</h2>
-  <div class="card-container">
-    <div class="card">
-      <h2>Nudeln mit Shrimps</h2>
-      <p>Leckere Shrimps mit noch leckeren Nudeln</p>
-      <div class="Kochbutton"><router-link to="/RezeptSeite" style="color: #181818">Jetzt kochen!</router-link></div>
 
-    </div>
-  </div>
-  -->
-  <div class="swiper-container">
-    <swiper :options="swiperOptions">
-      <swiper-slide v-for="card in cards" :key="card.id">
-        <div class="card" v-for="(card, index) in cards" :key="index">
-          <h2>{{ card.title }}</h2>
-          <p>{{ card.text }}</p>
+  <div class="carousel">
+    <GSCarousel :items="cards" item-gap="16" :items-to-show="4" layout>
+      <template #item="{ data }">
+        <div class="card">
+          <h2>{{ cards.title }}</h2>
+          <p>{{ cards.text }}</p>
         </div>
-      </swiper-slide>
-    </swiper>
+      </template>
+    </GSCarousel>
   </div>
 
   <FooterPers/>
@@ -70,16 +52,6 @@ body {
   cursor: pointer;
 }
 
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 20px;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10%;
-}
-
 .card {
   background-color: #fff;
   padding: 20px;
@@ -88,12 +60,6 @@ body {
   text-align: center;
   width: calc(25% - 20px);
   margin: 10px;
-}
-
-.card img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 10px;
 }
 
 .card h2 {
@@ -105,25 +71,6 @@ body {
   font-size: 1rem;
   margin-bottom: 10px;
   color: #666;
-}
-
-.Kochbutton {
-  background-color: #4CAF50;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.Kochbutton {
-  transition: all 0.2s ease-in-out;
-}
-
-.Kochbutton:hover {
-  transform: scale(1.05);
-  cursor: pointer;
 }
 
 input[type="text"] {
@@ -149,4 +96,9 @@ li {
 li:hover {
   background-color: #ddd;
 }
+
+.carousel {
+  max-width: 100%;
+}
+
 </style>

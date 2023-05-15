@@ -1,8 +1,6 @@
 <script setup>
 import FooterPers from "@/components/FooterPers.vue";
-</script>
 
-<script setup>
 import { ref, onMounted } from 'vue';
 
 let ingredients = ref([]);
