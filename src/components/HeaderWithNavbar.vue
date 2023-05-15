@@ -1,5 +1,11 @@
 <script setup>
+import store from "@/store";
+import router from "@/router";
 
+const logout = () => {
+  store.dispatch('performLogout');
+  router.push('/');
+};
 </script>
 
 
@@ -42,7 +48,7 @@
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <li><router-link to="/profil" class="dropdown-item" style=" color: #a97272">Profil</router-link></li>
         <li><hr class="dropdown-divider"></li>
-        <li><router-link to="/login" class="dropdown-item" style=" color: #a97272">Login</router-link></li>
+        <li @click="logout" class="dropdown-item">Logout</li>
       </ul>
     </div>
 <!--     -->
