@@ -45,10 +45,10 @@ function getCookie() {
     return null;
 }
 router.beforeEach((to, from, next) => {
+    const cookie = getCookie()
     const isLoggedIn = store.state.isLoggedIn;
     const requiresAuth = to.matched.some(route => route.meta.requiresAuth);
-
-    if (requiresAuth && !isLoggedIn) {
+    if ((requiresAuth && !isLoggedIn)) {
         next({ name: 'StartLogin' }); // Benutzer wird zur Anmeldeseite weitergeleitet
     } else {
         next();

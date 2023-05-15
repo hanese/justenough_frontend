@@ -41,7 +41,7 @@ async function getRecipesByStorageIngredients() {
   });
   const recipesResponse = await fetch(url, options);
   const recipesData = await recipesResponse.json();
-  recipes.value = recipesData;
+  recipes = recipesData;
 }
 
 onMounted(async () => {
