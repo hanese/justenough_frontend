@@ -31,6 +31,7 @@ h1 {
 }
 
 .WillkommenH2 {
+  text-align: center;
   transition: all 0.2s ease-in-out;
   margin-top: 50px;
 }

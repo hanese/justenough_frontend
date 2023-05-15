@@ -13,6 +13,7 @@ import FooterPers from "@/components/FooterPers.vue";
 
 <style>
 .WillkommenH2 {
+  text-align: center;
   transition: all 0.2s ease-in-out;
   margin-top: 50px;
 }

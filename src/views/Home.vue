@@ -1,40 +1,34 @@
 <script setup>
   import FooterPers from "@/components/FooterPers.vue";
+  import { Swiper, SwiperSlide } from "vue-awesome-swiper";
+  import "swiper/swiper-bundle.css";
+  import {ref} from "vue";
+
   /*
-  export default {
-    data() {
-      return {
-        cards: [
-          { id: 1, title: "Nudeln Numero 1", text: "Nudeln Beschreibung" },
-          { id: 1, title: "Nudeln Numero 1", text: "Nudeln Beschreibung" },
-          { id: 1, title: "Nudeln Numero 1", text: "Nudeln Beschreibung" },
-        ],
-      };
+  const cards = ref([
+  { id: 1, title: "Nudeln Numero 1", text: "Nudeln Beschreibung" },
+  { id: 1, title: "Nudeln Numero 1", text: "Nudeln Beschreibung" },
+  { id: 1, title: "Nudeln Numero 1", text: "Nudeln Beschreibung" },
+  ]);
+
+  const swiperOptions = ref({
+    navigation: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
     },
-    methods: {
-      addCard() {
-        this.cards.push({ id: this.cards.length + 1, title: 'Card ${this.cards.length + 1}', text: 'Text für Karte ${this.cards.lenght + 1}' });
-      },
-    },
-  };
-*/
+  });
+
+  function addCard() {
+    const new
+  }
+  */
 </script>
 
 <template>
-  <!--
-  <div class="search-container">
-    <input type="text" placeholder="Search...">
-    <div class="dropdown">
-      <ul>
-        <li>Result 1</li>
-        <li>Result 2</li>
-        <li>Result 3</li>
-      </ul>
-    </div><
-  </div>
--->
 
   <h2 class="WillkommenH2">Willkommen bei JustEnough :-)</h2>
+  <!--
   <div class="card-container">
     <div class="card">
       <h2>Nudeln mit Shrimps</h2>
@@ -42,15 +36,18 @@
       <div class="Kochbutton"><router-link to="/RezeptSeite" style="color: #181818">Jetzt kochen!</router-link></div>
     </div>
   </div>
-
-  <!--
-    <div class="card-container">
-      <div class="card" v-for="(card, index) in cards" :key="index">
-        <h2>{{ card.title }}</h2>
-        <p>{{ card.text }}</p>
-      </div>
-    </div>
   -->
+  <div class="swiper-container">
+    <swiper :options="swiperOptions">
+      <swiper-slide v-for="card in cards" :key="card.id">
+        <div class="card" v-for="(card, index) in cards" :key="index">
+          <h2>{{ card.title }}</h2>
+          <p>{{ card.text }}</p>
+        </div>
+      </swiper-slide>
+    </swiper>
+  </div>
+
   <FooterPers/>
 </template>
 
