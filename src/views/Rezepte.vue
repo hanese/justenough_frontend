@@ -20,6 +20,12 @@ import SearchbarTest from "@/components/deprecated_SearchbarTest.vue";
       <SearchFilterAddRecipes/>
     </div>
 
+    <div>
+      <router-link to="/CreateRecipe">
+        <button type="submit" class="btn btn-primary">Create your own recipe</button>
+      </router-link>
+    </div>
+
   </div>
 
 </template>
