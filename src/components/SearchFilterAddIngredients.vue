@@ -114,8 +114,8 @@ function addIngredientToShoppingList(ingredient){
             <div class="hidden-button">
                  <!--Button: Vorratskammer hinzufügen-->
               <button class="btn btn-outline-secondary"  type="button" @click="addIngredient(ingredient)">
-             <span class="material-symbols-outlined" style="padding-top: 6px">add</span>
-             </button>
+                <span class="material-symbols-outlined" style="padding-top: 6px">add</span>
+              </button>
 
               <!--Button: Einkaufsliste hinzufügen-->
              <button class="btn btn-outline-secondary" type="button" @click="addIngredientToShoppingList(ingredient)">
