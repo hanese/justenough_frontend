@@ -1,5 +1,4 @@
 import {createRouter, createWebHistory} from 'vue-router'
-import Profil from "@/views/Profil.vue";
 import Einkaufsliste from "@/views/Einkaufsliste.vue";
 import Home from "@/views/Home.vue";
 import Zutaten from "@/views/Zutaten.vue";
@@ -16,7 +15,6 @@ import store from "@/store";
 import EigeneRezepte from "@/views/EigeneRezepte.vue";
 
 const routes = [
-    {path: '/profil', name: 'Profil', component: Profil, meta: { requiresAuth: true }},
     {path: '/einkaufsliste', name: 'Einkaufsliste', component: Einkaufsliste, meta: { requiresAuth: true }},
     {path: '/zutaten', name: 'Zutaten', component: Zutaten, meta: { requiresAuth: true }},
     {path: '/rezepte', name: 'Rezepte', component: Rezepte, meta: { requiresAuth: true }},
