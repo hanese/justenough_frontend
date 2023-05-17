@@ -124,4 +124,10 @@ li:hover .hidden-button {
 .container {
   color: black;
 }
+
+.input-group{
+  padding-top: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
 </style>

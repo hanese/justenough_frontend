@@ -164,5 +164,9 @@ li:hover .hidden-button {
   display: inline-block; /* Button beim Überfahren des Listenpunkts einblenden */
 }
 
-
+.input-group{
+  padding: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
 </style>
