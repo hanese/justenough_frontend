@@ -71,12 +71,12 @@ onMounted(async () => {
   </div>
 
   <h1 v-if="isLoading">Loading...</h1>
-  <h4 v-else style="padding-top: 30px">You can cook the following recipes:</h4>
+  <h4 v-else style="padding-top: 30px; display: flex; justify-content: center;">You can cook the following recipes:</h4>
   <ul v-if="!isLoading">
 
 
-    <li v-for="recipe in recipes" :key="recipe.id">
-      <router-link :to="newPage(recipe.id)">
+    <li v-for="recipe in recipes" :key="recipe.id" style="display: flex; justify-content: center;">
+      <router-link :to="newPage(recipe.id)" style="color: #181818">
         <span>{{ recipe.meal }}</span>
       </router-link>
     </li>

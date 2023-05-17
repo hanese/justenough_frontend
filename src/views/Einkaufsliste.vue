@@ -1,4 +1,6 @@
 <script setup>
+import FooterPers from "@/components/FooterPers.vue";
+
 import { ref, onMounted } from 'vue';
 
 let ingredients = ref([]);
@@ -53,7 +55,7 @@ async function deleteFromShoppingList(uuid) {
 
 <template>
   <div>
-    <h1>Shopping List</h1>
+    <h1 style="align-items: center; display: flex; justify-content: center; text-align: center; margin-top: 20px;">Shopping List</h1>
     <ul v-if="!isLoading">
       <li v-for="ingredient in ingredients" :key="ingredient">
         <div class="ingredient-container">
@@ -67,6 +69,9 @@ async function deleteFromShoppingList(uuid) {
       </li>
     </ul>
   </div>
+
+  <FooterPers/>
+
 </template>
 
 

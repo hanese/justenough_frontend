@@ -9,6 +9,8 @@ import AktuellesRezept from "@/views/AktuellesRezept.vue";
 import WhatCanICook from "@/views/WhatCanICook.vue";
 import StartLogin from "@/views/StartLogin.vue";
 import Vorratskammer from "@/views/Vorratskammer.vue";
+import DataPrivacy from "@/views/DataPrivacy.vue";
+
 import Registrierung from "@/views/Registrierung.vue";
 import CreateRecipe from "@/views/CreateRecipe.vue";
 import store from "@/store";
@@ -24,6 +26,8 @@ const routes = [
     {path: '/aktuellesRezept', name: 'AktuellesRezept', component: AktuellesRezept, meta: { requiresAuth: true }},
     {path: '/whatCanICook', name: 'WhatCanICook', component: WhatCanICook, meta: { requiresAuth: true }},
     {path: '/vorratskammer', name: 'Vorratskammer', component: Vorratskammer, meta: { requiresAuth: true }},
+    {path: '/dataprivacy', name: 'DataPrivacy', component: DataPrivacy, meta: { requiresAuth: true }},
+    {path: '/', name: 'StartLogin', component: StartLogin},
     {path: '/createRecipe', name: 'CreateRecipe', component: CreateRecipe, meta: { requiresAuth: true }},
     {path: '/eigeneRezepte', name: 'EigeneRezepte', component: EigeneRezepte, meta: { requiresAuth: true }},
     {path: '/registrierung', name: 'Registrierung', component: Registrierung},

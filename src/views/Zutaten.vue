@@ -2,6 +2,7 @@
 import SearchFilterAdd from "@/components/SearchFilterAddIngredients.vue";
 import SearchbarTest from "@/components/SearchbarTest.vue";
 import SearchFilterAddIngredients from "@/components/SearchFilterAddIngredients.vue";
+import FooterPers from "@/components/FooterPers.vue";
 </script>
 
 <template>
@@ -21,15 +22,14 @@ import SearchFilterAddIngredients from "@/components/SearchFilterAddIngredients.
       </div>
     </div>
 
-
-
-
     <div class="SearchFilterAdd">
       <SearchFilterAddIngredients/>
     </div>
 
   </div>
 
+
+  <FooterPers/>
 </template>
 
 <style scoped>
@@ -66,6 +66,5 @@ import SearchFilterAddIngredients from "@/components/SearchFilterAddIngredients.
   color: #a97272;
   transform: scale(1.1);
   cursor: pointer;
-
 }
 </style>

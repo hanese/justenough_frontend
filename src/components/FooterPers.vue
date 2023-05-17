@@ -9,9 +9,8 @@
       <div class="row">
         <div class="col-md-12">
           <ul class="footer_links text-center">
-            <li class="FussButton"><router-link to="/impressum" style="color: #181818">Impressum</router-link></li>
-            <li class="FussButton"><router-link to="/impressum" style="color: #181818">Datenschutz</router-link></li>
-            <li class="FussButton"><router-link to="/impressum" style="color: #181818">FAQ</router-link></li>
+            <li class="FussButton"><router-link to="/impressum" style="color: #181818">About us</router-link></li>
+            <li class="FussButton"><router-link to="/dataprivacy" style="color: #181818">Privacy Policy</router-link></li>
           </ul>
             <p class="text-center">&copy; 2023 JustEnough</p>
             <hr class="footer_divider">
@@ -48,7 +47,7 @@ footer {
 }
 
 .footer_divider {
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #666666;
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -57,5 +56,4 @@ footer {
   border: none;
   border-radius: 4px;
 }
-
 </style>

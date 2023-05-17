@@ -78,9 +78,9 @@ function newPage(wholeMeal){
     <div class="container">
       <!--gesuchte Rezepte anzeigen-->
       <ul style="list-style-type: none; display: block;">
-        <li class="testSearch" v-for="meal in filteredList()" :key="meal" >
+        <li class="testSearch" v-for="meal in filteredList()" :key="meal" style="color: #181818">
 
-          <router-link :to="newPage(meal.id)"><span style="display: inline">{{ meal.meal }}</span></router-link>
+          <router-link :to="newPage(meal.id)"><span style="display: inline; color: #181818;">{{ meal.meal }}</span></router-link>
         </li>
       </ul>
     </div>
@@ -118,6 +118,13 @@ li .hidden-button {
 li:hover .hidden-button {
   display: inline-block; /* Button beim Überfahren des Listenpunkts einblenden */
 }
+.container {
+  color: black;
+}
 
-
+.input-group{
+  padding-top: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
 </style>

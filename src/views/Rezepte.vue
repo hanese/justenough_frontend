@@ -2,6 +2,7 @@
 import SearchFilterAdd from "@/components/SearchFilterAddRecipes.vue";
 import SearchFilterAddRecipes from "@/components/SearchFilterAddRecipes.vue";
 import SearchbarTest from "@/components/SearchbarTest.vue";
+import FooterPers from "@/components/FooterPers.vue";
 </script>
 
 <template>
@@ -30,7 +31,7 @@ import SearchbarTest from "@/components/SearchbarTest.vue";
       <SearchFilterAddRecipes/>
     </div>
 
-    <div>
+    <div class="addRecipe">
       <router-link to="/CreateRecipe">
         <button type="submit" class="btn btn-primary">Create your own recipe</button>
       </router-link>
@@ -39,6 +40,7 @@ import SearchbarTest from "@/components/SearchbarTest.vue";
 
   </div>
 
+  <FooterPers/>
 </template>
 
 <style scoped>
@@ -101,5 +103,18 @@ li:hover .hidden-button {
   color: #a97272;
   transform: scale(1.1);
   cursor: pointer;
+}
+.btn-primary{
+  background-color: #888888; /* Graue Hintergrundfarbe */
+  color: #ffffff; /* Textfarbe */
+  padding: 10px 20px; /* Innenabstand */
+  border: none; /* Kein Rand */
+  border-radius: 4px; /* Abgerundete Ecken */
+  cursor: pointer; /* Zeiger bei Mouseover */
+ }
+
+.addRecipe{
+  display: flex;
+  justify-content: center;
 }
 </style>
