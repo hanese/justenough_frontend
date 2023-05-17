@@ -93,7 +93,6 @@ function newPage(wholeMeal){
 
 <style scoped>
 li {
-  display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 15px;
