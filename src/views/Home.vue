@@ -197,7 +197,7 @@ li:hover {
 
 .carousel-image {
     width: 100%;
-    height: 250%;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -245,6 +245,6 @@ li:hover {
 .carousel {
     position: relative;
     width: 70%;
-    height: 300px;
+    height: 550px;
 }
 </style>
