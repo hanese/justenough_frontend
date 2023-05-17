@@ -11,6 +11,7 @@ import WhatCanICook from "@/views/WhatCanICook.vue";
 import StartLogin from "@/views/StartLogin.vue";
 import store from "@/store";
 import Vorratskammer from "@/views/Vorratskammer.vue";
+import DataPrivacy from "@/views/DataPrivacy.vue";
 
 
 const routes = [
@@ -24,8 +25,8 @@ const routes = [
     {path: '/aktuellesRezept', name: 'AktuellesRezept', component: AktuellesRezept, meta: { requiresAuth: true }},
     {path: '/whatCanICook', name: 'WhatCanICook', component: WhatCanICook, meta: { requiresAuth: true }},
     {path: '/vorratskammer', name: 'Vorratskammer', component: Vorratskammer, meta: { requiresAuth: true }},
-    {path: '/', name: 'StartLogin', component: StartLogin}
-
+    {path: '/dataprivacy', name: 'DataPrivacy', component: DataPrivacy, meta: { requiresAuth: true }},
+    {path: '/', name: 'StartLogin', component: StartLogin},
 
 ]
 const router = createRouter({
