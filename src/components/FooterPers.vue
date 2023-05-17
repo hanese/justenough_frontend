@@ -56,5 +56,4 @@ footer {
   border: none;
   border-radius: 4px;
 }
-
 </style>
