@@ -6,16 +6,16 @@
         <div class="ingredients-block">
           <table class="ingredients-table">
             <tr v-for="index in 20" :key="index">
-              <td v-if="wholeMeal['measure' + index] !== 'None'">
+              <td v-if="wholeMeal['measure' + index] !== 'None' && wholeMeal['measure' + index] !== 'Null'">
                 {{ wholeMeal['measure' + index] }}
               </td>
-              <td v-if="wholeMeal['ingredient' + index] !== 'None'">
+              <td v-if="wholeMeal['ingredient' + index] !== 'None' && wholeMeal['ingredient' + index] !== 'Null'">
                 {{ wholeMeal['ingredient' + index] }}
               </td>
             </tr>
           </table>
         </div>
-        <div class="meal-image">
+        <div class="meal-image" v-if="wholeMeal.meal_thumb !== 'Null'">
           <img :src="wholeMeal.meal_thumb" alt="Meal Thumb" />
         </div>
       </div>

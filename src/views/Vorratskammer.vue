@@ -36,7 +36,6 @@ function getTokenFromCookie() {
 }
 
 
-
 async function deleteFromStorage(uuid) {
   const token = getTokenFromCookie();
   const options = {
