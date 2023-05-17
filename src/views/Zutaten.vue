@@ -7,15 +7,22 @@ import SearchFilterAddIngredients from "@/components/SearchFilterAddIngredients.
 <template>
   <div class="ZutatenHeader">
 
-    <div>
-      <h1 class="aktuelleSeite">Ingredients</h1>
-      <router-link to="Vorratskammer"><h1 class="nichtaktuelleSeite">Storage</h1></router-link>
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <h1 class="aktuelleSeite">Ingredients</h1>
+        </div>
+        <div class="col text-center">
+          <router-link to="Vorratskammer">
+            <h1 class="nichtaktuelleSeite">Storage</h1>
+          </router-link>
+        </div>
+
+      </div>
     </div>
 
-    <div>
 
 
-    </div>
 
     <div class="SearchFilterAdd">
       <SearchFilterAddIngredients/>
@@ -26,11 +33,14 @@ import SearchFilterAddIngredients from "@/components/SearchFilterAddIngredients.
 </template>
 
 <style scoped>
-h1 {
-  text-align: center;
-  padding-bottom: 20px;
-  font-size: 30pt;
+
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 
 .aktuelleSeite {
   transition: all 0.2s ease-in-out;
@@ -44,11 +54,7 @@ h1 {
   border-radius: 20px;
 }
 
-.aktuelleSeite:hover{
-  color: rgba(169, 114, 114, 0.98);
-  transform: scale(1.1);
-  cursor: pointer;
-}
+
 
 .nichtaktuelleSeite{
   transition: all 0.2s ease-in-out;

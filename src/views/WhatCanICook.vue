@@ -52,14 +52,26 @@ onMounted(async () => {
 
 
 <template>
-  <div>
-    <router-link to="Rezepte"><h1 class="nichtaktuelleSeite">Recipes</h1></router-link>
-    <h1 class="aktuelleSeite">What Can I Cook?</h1>
-    <router-link to="EigeneRezepte"><h1 class="nichtaktuelleSeite">Own Recipes</h1></router-link>
-
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <router-link to="Rezepte">
+          <h1 class="nichtaktuelleSeite">Recipes</h1>
+        </router-link>
+      </div>
+      <div class="col text-center">
+        <h1 class="aktuelleSeite">What Can I Cook?</h1>
+      </div>
+      <div class="col text-center">
+        <router-link to="EigeneRezepte">
+          <h1 class="nichtaktuelleSeite">Own Recipes</h1>
+        </router-link>
+      </div>
+    </div>
   </div>
+
   <h1 v-if="isLoading">Loading...</h1>
-  <h1 v-else>You can cook the following recipes:</h1>
+  <h4 v-else style="padding-top: 30px">You can cook the following recipes:</h4>
   <ul v-if="!isLoading">
 
 

@@ -7,9 +7,24 @@ import SearchbarTest from "@/components/SearchbarTest.vue";
 <template>
   <div class="ZutatenHeader">
 
-    <h1 class="aktuelleSeite">Recipes</h1>
-    <router-link to="WhatCanICook"><h1 class="nichtaktuelleSeite">What Can I Cook?</h1></router-link>
-    <router-link to="EigeneRezepte"><h1 class="nichtaktuelleSeite">Own Recipes</h1></router-link>
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <h1 class="aktuelleSeite">Recipes</h1>
+        </div>
+        <div class="col text-center">
+          <router-link to="WhatCanICook">
+            <h1 class="nichtaktuelleSeite">What Can I Cook?</h1>
+          </router-link>
+        </div>
+        <div class="col text-center">
+          <router-link to="EigeneRezepte">
+            <h1 class="nichtaktuelleSeite">Own Recipes</h1>
+          </router-link>
+        </div>
+      </div>
+    </div>
+
 
     <div class="SearchFilterAdd">
       <SearchFilterAddRecipes/>

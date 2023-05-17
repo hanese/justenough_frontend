@@ -1,7 +1,22 @@
 <template>
-  <router-link to="Rezepte"><h1 class="nichtaktuelleSeite">Recipes</h1></router-link>
-  <router-link to="WhatCanICook"><h1 class="nichtaktuelleSeite">What Can I Cook?</h1></router-link>
-  <h1 class="aktuelleSeite">Own Recipes</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <router-link to="Rezepte">
+          <h1 class="nichtaktuelleSeite">Recipes</h1>
+        </router-link>
+      </div>
+      <div class="col text-center">
+        <router-link to="WhatCanICook">
+          <h1 class="nichtaktuelleSeite">What Can I Cook?</h1>
+        </router-link>
+      </div>
+      <div class="col text-center">
+        <h1 class="aktuelleSeite">Own Recipes</h1>
+      </div>
+    </div>
+  </div>
+
 </template>
 
 <script setup>

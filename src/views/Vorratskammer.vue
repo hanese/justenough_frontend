@@ -58,11 +58,19 @@ async function deleteFromStorage(uuid) {
 
 <template>
   <div>
-    <div>
-      <router-link to="Zutaten"><h1 class="nichtaktuelleSeite">Ingredients</h1></router-link>
-      <h1 class="aktuelleSeite">Storage</h1>
-
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <router-link to="Zutaten">
+            <h1 class="nichtaktuelleSeite">Ingredients</h1>
+          </router-link>
+        </div>
+        <div class="col text-center">
+          <h1 class="aktuelleSeite">Storage</h1>
+        </div>
+      </div>
     </div>
+
     <ul v-if="!isLoading">
       <li v-for="ingredient in ingredients" :key="ingredient">
         <div class="ingredient-container">
@@ -80,6 +88,7 @@ async function deleteFromStorage(uuid) {
 
 
 <style scoped>
+
 li {
   display: flex;
   align-items: center;
@@ -129,11 +138,6 @@ li:hover .hidden-button {
   border-radius: 20px;
 }
 
-.aktuelleSeite:hover{
-  color: rgba(169, 114, 114, 0.98);
-  transform: scale(1.1);
-  cursor: pointer;
-}
 
 .nichtaktuelleSeite{
   transition: all 0.2s ease-in-out;
