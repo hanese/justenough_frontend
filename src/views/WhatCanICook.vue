@@ -87,7 +87,6 @@ onMounted(async () => {
 
 <style scoped>
 li {
-  display: flex;
   align-items: center;
   font-size: 15px;
   margin-bottom: 10px;

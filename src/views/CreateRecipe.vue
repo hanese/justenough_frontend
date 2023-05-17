@@ -3,7 +3,7 @@
     <h1>Create your own recipe</h1>
 
     <div class="input-group mb-3">
-      <input type="text" id="mealName" class="form-control" v-model="mealName" placeholder="Name of the meal">
+      <input type="text" id="mealName" class="form-control" v-model="mealName" placeholder="Name of the meal" >
     </div>
 
     <div class="input-group mb-3">
@@ -38,7 +38,7 @@
 
     <p v-if="ingredients.length === 0" class="text-danger">Please provide at least one ingredient.</p>
 
-    <button @click="saveRecipe" class="btn btn-success" :disabled="hasEmptyMeasure">Save Recipe</button>
+    <button @click="saveRecipe" class="btn btn-success" :disabled="hasEmptyFields">Save Recipe</button>
   </div>
 </template>
 
@@ -72,6 +72,9 @@ export default {
   computed: {
     hasEmptyMeasure() {
       return this.ingredients.some(ingredient => !ingredient.measure);
+    },
+    hasEmptyFields() {
+      return !this.mealName || !this.mealInstructions || this.ingredients.some(ingredient => !ingredient.measure) || this.ingredients.some(ingredient => !ingredient.name);
     },
     lastIngredientField(){
       return this.ingredients.length === 1;
