@@ -1,3 +1,53 @@
+<script setup>
+import { ref } from "vue"
+
+let input = ref("")
+
+//get all recipes
+let meals = ref([])
+let ids = ref([])
+let recipes = ref({})
+async function fetchAllMeals() {
+  try {
+    const token = getTokenFromCookie();
+    const response = await fetch('http://localhost:8000/api/recipes/getCustomRecipes', {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    recipes = await response.json()
+    meals = recipes.map((mealData) => mealData.meal)
+    ids = recipes.map((mealData) => mealData.uuid)
+    debugger
+  } catch (error) {
+    console.error(error)
+  }
+}
+// get all custom Recipes
+fetchAllMeals()
+
+function getTokenFromCookie() {
+  const cookies = document.cookie.split(';');
+  for (let i = 0; i < cookies.length; i++) {
+    const cookie = cookies[i].trim();
+    if (cookie.startsWith('access_token=')) {
+      return cookie.substring('access_token='.length, cookie.length);
+    }
+  }
+  return null;
+}
+
+
+//function um ganzes Rezept in neuer Seite anzuzeigen
+function newPage(wholeMeal){
+  return {
+    name: 'AktuellesRezept',
+    query: { id: wholeMeal }
+  };
+}
+</script>
+
 <template>
   <div class="container">
     <div class="row">
@@ -15,13 +65,19 @@
         <h1 class="aktuelleSeite">Own Recipes</h1>
       </div>
     </div>
+
+    <ul style="list-style-type: none; display: block;">
+      <li class="testSearch" v-for="meal in meals" :key="meal" >
+        <router-link :to="newPage(meal.id)"><span style="display: inline">{{ meal.meal }}</span></router-link>
+      </li>
+    </ul>
+
+
   </div>
 
 </template>
 
-<script setup>
 
-</script>
 
 <style scoped>
 .aktuelleSeite {
