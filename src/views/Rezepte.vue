@@ -1,7 +1,7 @@
 <script setup>
 import SearchFilterAdd from "@/components/SearchFilterAddRecipes.vue";
 import SearchFilterAddRecipes from "@/components/SearchFilterAddRecipes.vue";
-import SearchbarTest from "@/components/deprecated_SearchbarTest.vue";
+import SearchbarTest from "@/components/SearchbarTest.vue";
 </script>
 
 <template>

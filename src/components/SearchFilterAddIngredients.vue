@@ -17,10 +17,10 @@ const add = ["Zutat erstellen"]
 function filteredList() {
   if (this.input.length === 0) {
     return 0
-  } else if (ingredients.filter((ingredient) => ingredient.toLowerCase().startsWith(input.value.toLowerCase())).length === 0) {
+  } else if (ingredients.filter((ingredient) => ingredient.toLowerCase().includes(input.value.toLowerCase())).length === 0) {
     return add
   } else {
-    return ingredients.filter((ingredient) => ingredient.toLowerCase().startsWith(input.value.toLowerCase()))
+    return ingredients.filter((ingredient) => ingredient.toLowerCase().includes(input.value.toLowerCase()))
   }
 }
 

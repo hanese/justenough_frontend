@@ -44,18 +44,22 @@ async function getCookieExpiry() {
         if (cookie.startsWith('access_token=')) {
             const cookieValue = cookie.substring('access_token='.length, cookie.length);
             const response = await fetch("http://localhost:8000/api/token/expiry/"+ cookieValue)
-            return new Date(await response.json())
+            const timestamp = await response.json()
+            return new Date(timestamp * 1000)
         }
     }
     return null;
 }
 router.beforeEach(async (to, from, next) => {
     // checks if Bearer Token is expired
-    const isExpired = await getCookieExpiry() < new Date()
+    const expiry = await getCookieExpiry()
+    const now = new Date()
+    const isExpired = expiry < now
     // checks if the requested site requires auth
     const requiresAuth = to.matched.some(route => route.meta.requiresAuth);
-    if ((requiresAuth && !isExpired)) {
+    if (requiresAuth && isExpired) {
         // redirect to Login
+        await store.dispatch("performLogout")
         next({name: 'StartLogin'});
     } else {
         // redirect to requested Component

@@ -1,6 +1,6 @@
 <script setup>
 import SearchFilterAdd from "@/components/SearchFilterAddIngredients.vue";
-import SearchbarTest from "@/components/deprecated_SearchbarTest.vue";
+import SearchbarTest from "@/components/SearchbarTest.vue";
 import SearchFilterAddIngredients from "@/components/SearchFilterAddIngredients.vue";
 </script>
 
