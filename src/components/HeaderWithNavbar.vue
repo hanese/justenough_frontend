@@ -42,8 +42,7 @@ const logout = () => {
         <span class="material-symbols-outlined" style="padding-top: 6px">settings</span>
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <li><router-link to="/profil" class="dropdown-item" style=" color: #a97272">Profil</router-link></li>
-        <li><hr class="dropdown-divider"></li>
+
         <li @click="logout" class="dropdown-item">Logout</li>
       </ul>
     </div>

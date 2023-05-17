@@ -1,13 +1,10 @@
 <script setup>
 
 import LoginForm from "@/components/LoginForm.vue";
-import GetUserData from "@/components/GetUserData.vue";
 </script>
 
 <template>
-  <h4>Zuerst einloggen, Halloooo=?=!§")="$(=!=!</h4>
   <LoginForm/>
-  <GetUserData/>
 
 </template>
 

@@ -10,6 +10,10 @@
         <input type="password" id="password" class="form-control" v-model="password">
       </div>
       <button type="submit" class="btn btn-primary">Login</button>
+      <router-link to="/Registrierung">
+        <button type="button" class="btn btn-primary">Registrieren</button>
+      </router-link>
+      <p v-if="errorMessage" class="text-danger">{{ errorMessage }}</p>
     </form>
   </div>
 </template>
@@ -20,28 +24,33 @@ import store from "@/store";
 export default {
   data() {
     return {
-      username: '',
-      password: '',
-      token: '',
+      username: "",
+      password: "",
+      token: "",
+      errorMessage: "",
     };
   },
   methods: {
+    // performs an HTTP Request trying to log in the user
     async login() {
-      const response = await fetch('http://localhost:8000/login', {
-        method: 'POST',
+      const response = await fetch("http://localhost:8000/login", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
+          "Content-Type": "application/x-www-form-urlencoded",
         },
         body: `grant_type=password&username=${this.username}&password=${this.password}`,
       });
       const data = await response.json();
+      // if the response is ok, the token is set and a redirect to home is made
       if (response.status === 200) {
-        await store.dispatch('performLogin');
-
         this.token = data.access_token;
-        const now = new Date()
-        document.cookie = `access_token=${this.token}; expires=${new Date(now.getTime() + 1800000)}`;
-        await this.$router.push('/home');
+        const now = new Date();
+        document.cookie = `access_token=${this.token}; expires=${new Date(
+            now.getTime() + 1800000
+        )}`;
+        await this.$router.push("/home");
+      } else {
+        this.errorMessage = "Invalid username or password.";
       }
     },
   },

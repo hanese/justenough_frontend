@@ -17,10 +17,10 @@ const add = ["Zutat erstellen"]
 function filteredList() {
   if (this.input.length === 0) {
     return 0
-  } else if (ingredients.filter((ingredient) => ingredient.toLowerCase().startsWith(input.value.toLowerCase())).length === 0) {
+  } else if (ingredients.filter((ingredient) => ingredient.toLowerCase().includes(input.value.toLowerCase())).length === 0) {
     return add
   } else {
-    return ingredients.filter((ingredient) => ingredient.toLowerCase().startsWith(input.value.toLowerCase()))
+    return ingredients.filter((ingredient) => ingredient.toLowerCase().includes(input.value.toLowerCase()))
   }
 }
 
@@ -114,8 +114,8 @@ function addIngredientToShoppingList(ingredient){
             <div class="hidden-button">
                  <!--Button: Vorratskammer hinzufügen-->
               <button class="btn btn-outline-secondary"  type="button" @click="addIngredient(ingredient)">
-             <span class="material-symbols-outlined" style="padding-top: 6px">add</span>
-             </button>
+                <span class="material-symbols-outlined" style="padding-top: 6px">add</span>
+              </button>
 
               <!--Button: Einkaufsliste hinzufügen-->
              <button class="btn btn-outline-secondary" type="button" @click="addIngredientToShoppingList(ingredient)">

@@ -7,7 +7,6 @@ import FooterPers from "@/components/FooterPers.vue";
 <template>
   <h1>Login</h1>
   <LoginForm/>
-  <GetUserData/>
 
   <FooterPers/>
 </template>

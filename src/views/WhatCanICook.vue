@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import {ref, onMounted} from 'vue';
 
 let recipes = ref([]);
 let isLoading = ref(true);
@@ -13,6 +13,14 @@ function getTokenFromCookie() {
     }
   }
   return null;
+}
+
+function newPage(wholeMeal) {
+
+  return {
+    name: 'AktuellesRezept',
+    query: {id: wholeMeal}
+  };
 }
 
 async function getRecipesByStorageIngredients() {
@@ -33,7 +41,7 @@ async function getRecipesByStorageIngredients() {
   });
   const recipesResponse = await fetch(url, options);
   const recipesData = await recipesResponse.json();
-  recipes.value = recipesData;
+  recipes = recipesData;
 }
 
 onMounted(async () => {
@@ -44,16 +52,100 @@ onMounted(async () => {
 
 
 <template>
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <router-link to="Rezepte">
+          <h1 class="nichtaktuelleSeite">Recipes</h1>
+        </router-link>
+      </div>
+      <div class="col text-center">
+        <h1 class="aktuelleSeite">What Can I Cook?</h1>
+      </div>
+      <div class="col text-center">
+        <router-link to="EigeneRezepte">
+          <h1 class="nichtaktuelleSeite">Own Recipes</h1>
+        </router-link>
+      </div>
+    </div>
+  </div>
+
   <h1 v-if="isLoading">Loading...</h1>
-  <h1 v-else>You can cook the following recipes:</h1>
+  <h4 v-else style="padding-top: 30px">You can cook the following recipes:</h4>
   <ul v-if="!isLoading">
+
+
     <li v-for="recipe in recipes" :key="recipe.id">
-      {{ recipe.meal }}
+      <router-link :to="newPage(recipe.id)">
+        <span>{{ recipe.meal }}</span>
+      </router-link>
     </li>
+
   </ul>
 
 </template>
 
 <style scoped>
+li {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
 
+li:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(169, 114, 114, 0.15);
+  z-index: -1;
+}
+
+.ingredient-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.ingredient-name {
+  margin-right: 10px;
+}
+
+.hidden-button {
+  display: none;
+}
+
+li:hover .hidden-button {
+  display: inline-block;
+}
+
+.aktuelleSeite {
+  transition: all 0.2s ease-in-out;
+  margin-top: 50px;
+  color: black;
+  background-color: rgba(169, 114, 114, 0.34); /* Hintergrundfarbe */
+  display: inline-block; /* Um den Rahmen um den Text zu setzen */
+  padding: 5px; /* Abstand innerhalb des Rahmens */
+  margin-right: 10px; /* Abstand zwischen "Ingredients" und "Storage" */
+  border: none;
+  border-radius: 20px;
+}
+
+
+
+.nichtaktuelleSeite{
+  transition: all 0.2s ease-in-out;
+  margin-top: 50px;
+  color: black;
+}
+
+.nichtaktuelleSeite:hover{
+  color: #a97272;
+  transform: scale(1.1);
+  cursor: pointer;
+}
 </style>
