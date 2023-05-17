@@ -46,7 +46,7 @@ async function deleteFromStorage(uuid) {
       Authorization: `Bearer ${token}`
     }
   };
-  const url = `http://localhost:8000/api/storage/deleteItem/{storageItemUuid}?storage_item_uuid=${uuid}`;
+  const url = `http://localhost:8000/api/storage/deleteItem/${uuid}`;
   await fetch(url, options);
   // Update the ingredients list by removing the deleted ingredient
   if (ingredients.value) {

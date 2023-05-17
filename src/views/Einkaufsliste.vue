@@ -43,10 +43,10 @@ async function deleteFromShoppingList(uuid) {
       Authorization: `Bearer ${token}`
     }
   };
-  const url = `http://localhost:8000/api/shopping/deleteShoppingItem/{shoppingItemUuid}?shopping_item_uuid=${uuid}`;
+  const url = `http://localhost:8000/api/shopping/deleteShoppingItem/${uuid}`;
   await fetch(url, options);
   // Update the ingredients list by removing the deleted ingredient
-  if (ingredients.value) {
+  if (true) {
     ingredients.value = ingredients.value.filter(ingredient => ingredient.uuid !== uuid);
   }
 }
