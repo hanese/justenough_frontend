@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1>Create your own recipe</h1>
-
+    <h1 style="  display: flex; justify-content: center; margin-top: 20px">Create your own recipe</h1>
+<div class="inputAll">
     <div class="input-group mb-3">
       <input type="text" id="mealName" class="form-control" v-model="mealName" placeholder="Name of the meal">
     </div>
@@ -26,6 +26,7 @@
       </ul>
 
     </div>
+</div>
 
     <div class="input-group mb-3">
       <button @click="addIngredientField" class="btn btn-secondary" :disabled="hasEmptyMeasure">
@@ -34,11 +35,12 @@
       <button @click="removeIngredientField" class="btn btn-secondary" :disabled="lastIngredientField">
         <span class="material-symbols-outlined" style="padding-top: 6px">remove</span>
       </button>
+      <button @click="saveRecipe" class="btn btn-success" :disabled="hasEmptyMeasure">Save Recipe</button>
     </div>
 
     <p v-if="ingredients.length === 0" class="text-danger">Please provide at least one ingredient.</p>
 
-    <button @click="saveRecipe" class="btn btn-success" :disabled="hasEmptyMeasure">Save Recipe</button>
+
   </div>
 </template>
 
@@ -193,5 +195,16 @@ export default {
 
 .suggestions li:hover {
   background-color: #f5f5f5;
+}
+
+.input-group{
+  display: flex;
+  justify-content: center;
+}
+
+.inputAll {
+  padding: 20px;
+  padding-right: 250px;
+  padding-left: 250px;
 }
 </style>
