@@ -73,17 +73,28 @@ h1{
   align-items: center;
   justify-content: space-between;
   background-color: #a97272;
+  position: relative;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .navigation-navbar{
   justify-content: flex-start;
   width: 50px;
-  height: 50px;
+  height: 70px;
   margin-left: 10px;
+  display: flex;
+  align-items: center;
 }
 
 .profile-navbar{
   justify-content: flex-end;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-menu {
+  justify-content: flex-start;
 }
 
 .JustEnoughH1 {
