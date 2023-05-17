@@ -55,6 +55,7 @@ onMounted(async () => {
   <div>
     <router-link to="Rezepte"><h1 class="nichtaktuelleSeite">Recipes</h1></router-link>
     <h1 class="aktuelleSeite">What Can I Cook?</h1>
+    <router-link to="EigeneRezepte"><h1 class="nichtaktuelleSeite">Own Recipes</h1></router-link>
 
   </div>
   <h1 v-if="isLoading">Loading...</h1>
@@ -122,11 +123,7 @@ li:hover .hidden-button {
   border-radius: 20px;
 }
 
-.aktuelleSeite:hover{
-  color: rgba(169, 114, 114, 0.98);
-  transform: scale(1.1);
-  cursor: pointer;
-}
+
 
 .nichtaktuelleSeite{
   transition: all 0.2s ease-in-out;

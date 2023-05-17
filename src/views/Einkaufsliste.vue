@@ -45,10 +45,7 @@ async function deleteFromShoppingList(uuid) {
   };
   const url = `http://localhost:8000/api/shopping/deleteShoppingItem/${uuid}`;
   await fetch(url, options);
-  // Update the ingredients list by removing the deleted ingredient
-  if (true) {
-    ingredients.value = ingredients.value.filter(ingredient => ingredient.uuid !== uuid);
-  }
+
 }
 
 

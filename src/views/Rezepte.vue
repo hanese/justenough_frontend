@@ -7,8 +7,9 @@ import SearchbarTest from "@/components/SearchbarTest.vue";
 <template>
   <div class="ZutatenHeader">
 
-    <router-link to="WhatCanICook"><h1 class="nichtaktuelleSeite">What Can I Cook?</h1></router-link>
     <h1 class="aktuelleSeite">Recipes</h1>
+    <router-link to="WhatCanICook"><h1 class="nichtaktuelleSeite">What Can I Cook?</h1></router-link>
+    <router-link to="EigeneRezepte"><h1 class="nichtaktuelleSeite">Own Recipes</h1></router-link>
 
     <div class="SearchFilterAdd">
       <SearchFilterAddRecipes/>
@@ -18,6 +19,7 @@ import SearchbarTest from "@/components/SearchbarTest.vue";
       <router-link to="/CreateRecipe">
         <button type="submit" class="btn btn-primary">Create your own recipe</button>
       </router-link>
+
     </div>
 
   </div>
@@ -74,11 +76,6 @@ li:hover .hidden-button {
   border-radius: 20px;
 }
 
-.aktuelleSeite:hover{
-  color: rgba(169, 114, 114, 0.98);
-  transform: scale(1.1);
-  cursor: pointer;
-}
 
 .nichtaktuelleSeite{
   transition: all 0.2s ease-in-out;
