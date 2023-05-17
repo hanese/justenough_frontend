@@ -136,16 +136,6 @@ body {
     cursor: pointer;
 }
 
-.card {
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    text-align: center;
-    width: calc(25% - 20px);
-    margin: 10px;
-}
-
 .card h2 {
     font-size: 1.2rem;
     margin-bottom: 10px;
@@ -203,7 +193,7 @@ li:hover {
 
 .carousel-image {
     width: 100%;
-    height: 100%;
+    height: 250%;
     object-fit: cover;
 }
 
