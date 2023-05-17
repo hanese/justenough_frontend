@@ -89,7 +89,7 @@ const nextSlide = () => {
 
 <template>
 
-    <h2 class="WillkommenH2">Willkommen bei JustEnough :-)</h2>
+    <h2 class="WillkommenH2">Welcome to JustEnough :-)</h2>
     <div class="carousel-container">
         <div v-if="!isLoading" class="carousel">
             <div class="carousel-inner">

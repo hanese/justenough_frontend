@@ -7,12 +7,7 @@ const logout = () => {
   router.push('/');
 };
 </script>
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
-
 <template>
-
-
   <div class="header">
 
 <!-- linke Seite Navbar mit Dropdown -->
@@ -22,11 +17,11 @@ const logout = () => {
       </button>
       <div>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <li><router-link to="/zutaten" class="dropdown-item" style=" color: #a97272">Zutaten</router-link></li>
+          <li><router-link to="/zutaten" class="dropdown-item" style=" color: #a97272">Ingredients</router-link></li>
           <li><hr class="dropdown-divider"></li>
-          <li><router-link to="/rezepte" class="dropdown-item" style=" color: #a97272">Rezepte</router-link></li>
+          <li><router-link to="/rezepte" class="dropdown-item" style=" color: #a97272">Recipes</router-link></li>
           <li><hr class="dropdown-divider"></li>
-          <li><router-link to="/einkaufsliste" class="dropdown-item" style=" color: #a97272">Einkaufsliste</router-link></li>
+          <li><router-link to="/einkaufsliste" class="dropdown-item" style=" color: #a97272">Shopping List</router-link></li>
 
         </ul>
       </div>
