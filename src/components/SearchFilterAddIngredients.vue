@@ -93,10 +93,7 @@ function addIngredientToShoppingList(ingredient){
       <input type="text" class="form-control" placeholder="Suche"
              aria-label="Recipient's username with two button addons" v-model="input">
 
-      <!-- Suchfilter mit Dropdown -->
-      <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-              aria-expanded="false">Filter
-      </button>
+
       <ul class="dropdown-menu">
         <li><a class="dropdown-item" href="#">Test</a></li>
         <li><a class="dropdown-item" href="#">Test</a></li>
