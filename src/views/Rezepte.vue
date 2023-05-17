@@ -31,7 +31,7 @@ import FooterPers from "@/components/FooterPers.vue";
       <SearchFilterAddRecipes/>
     </div>
 
-    <div>
+    <div class="addRecipe">
       <router-link to="/CreateRecipe">
         <button type="submit" class="btn btn-primary">Create your own recipe</button>
       </router-link>
@@ -105,5 +105,17 @@ li:hover .hidden-button {
   transform: scale(1.1);
   cursor: pointer;
 }
+.btn-primary{
+  background-color: #888888; /* Graue Hintergrundfarbe */
+  color: #ffffff; /* Textfarbe */
+  padding: 10px 20px; /* Innenabstand */
+  border: none; /* Kein Rand */
+  border-radius: 4px; /* Abgerundete Ecken */
+  cursor: pointer; /* Zeiger bei Mouseover */
+ }
 
+.addRecipe{
+  display: flex;
+  justify-content: center;
+}
 </style>
