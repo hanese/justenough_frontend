@@ -4,7 +4,6 @@ import LoginForm from "@/components/LoginForm.vue";
 </script>
 
 <template>
-  <h4>Zuerst einloggen, Halloooo=?=!§")="$(=!=!</h4>
   <LoginForm/>
 
 </template>
