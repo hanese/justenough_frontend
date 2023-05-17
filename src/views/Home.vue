@@ -127,8 +127,12 @@ body {
 }
 
 .WillkommenH2 {
-    transition: all 0.2s ease-in-out;
-    margin-top: 50px;
+  transition: all 0.2s ease-in-out;
+  margin-top: 50px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 .WillkommenH2:hover {
