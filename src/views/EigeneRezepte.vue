@@ -19,7 +19,6 @@ async function fetchAllMeals() {
     recipes = await response.json()
     meals = recipes.map((mealData) => mealData.meal)
     ids = recipes.map((mealData) => mealData.uuid)
-    debugger
   } catch (error) {
     console.error(error)
   }
