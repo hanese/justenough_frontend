@@ -60,10 +60,8 @@ async function fetchRandomMeals() {
 
 
 onMounted(async () => {
-    debugger
     await fetchRandomMeals();
     isLoading.value = false;
-    debugger
 });
 
 
