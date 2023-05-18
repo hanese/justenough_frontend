@@ -44,6 +44,14 @@ export default {
         username: this.username,
         password: this.password,
       };
+      if (/[äöüÄÖÜß]/.test(this.username)) {
+        this.passwordError = "The username cannot contain umlauts.";
+        return;
+      }
+      if (/[äöüÄÖÜß]/.test(this.password)) {
+        this.passwordError = "The password cannot contain umlauts.";
+        return;
+      }
       // Überprüfen, ob mindestens ein Großbuchstabe vorhanden ist
       const hasUpperCase = /[A-Z]/.test(userData.password);
       // Überprüfen, ob mindestens eine Zahl vorhanden ist
