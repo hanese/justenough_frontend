@@ -69,56 +69,27 @@ onMounted(async () => {
 
 
 <template>
-  <div>
-    <div v-if="wholeMeal">
-      <h2 class="topic">{{ wholeMeal.meal }}</h2>
-      <div class="content">
-        <div class="ingredients-block">
-          <table class="ingredients-table">
-            <h3>Ingredients</h3>
-            <tr v-for="index in 20" :key="index">
-              <td v-if="wholeMeal['measure' + index] !== 'None' && wholeMeal['measure' + index] !== 'Null'">
-                {{ wholeMeal['measure' + index] }}
-              </td>
-              <td v-if="wholeMeal['ingredient' + index] !== 'None' && wholeMeal['ingredient' + index] !== 'Null'">
-                {{ wholeMeal['ingredient' + index] }}
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="meal-image" v-if="wholeMeal.meal_thumb !== 'Null'">
-          <img :src="wholeMeal.meal_thumb" alt="Meal Thumb" />
-        </div>
-      </div>
-      <div class="instructions-block">
-        <h2>Instructions</h2>
-        <p class="instructions-text">{{ wholeMeal.instructions }}</p>
-      </div>
-    </div>
-    <div v-else>
-      Loading...
-    </div>
-  </div>
     <div>
         <div v-if="!isLoading">
             <h2 class="topic">{{ wholeMeal.meal }}</h2>
             <div class="content">
-                <div class="meal-image">
-                    <img :src="wholeMeal.meal_thumb" alt="Meal Thumb"/>
-                </div>
                 <div class="ingredients-block">
                     <table class="ingredients-table">
                         <h3>Ingredients</h3>
                         <tr v-for="index in 20" :key="index">
-                            <td v-if="wholeMeal['measure' + index] !== 'None'">
+                            <td v-if="wholeMeal['measure' + index] !== 'None' && wholeMeal['measure' + index] !== 'Null'">
                                 {{ wholeMeal['measure' + index] }}
                             </td>
-                            <td v-if="wholeMeal['ingredient' + index] !== 'None'"
+                            <td v-if="wholeMeal['ingredient' + index] !== 'None' && wholeMeal['ingredient' + index] !== 'Null'"
                                 :style="{ color: storagedIngredients.includes(wholeMeal['ingredient' + index]) ? 'green' : 'red' }">
+
                                 {{ wholeMeal['ingredient' + index] }}
                             </td>
                         </tr>
                     </table>
+                </div>
+                <div class="meal-image" v-if="wholeMeal.meal_thumb !== 'Null'">
+                    <img :src="wholeMeal.meal_thumb" alt="Meal Thumb"/>
                 </div>
             </div>
             <div class="instructions-block">
@@ -130,6 +101,7 @@ onMounted(async () => {
             Loading...
         </div>
     </div>
+
 
     <FooterPers/>
 </template>
