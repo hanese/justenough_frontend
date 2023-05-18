@@ -47,6 +47,7 @@ async function deleteFromShoppingList(uuid) {
   };
   const url = `http://localhost:8000/api/shopping/deleteShoppingItem/${uuid}`;
   await fetch(url, options);
+  location.reload();
 
 }
 
