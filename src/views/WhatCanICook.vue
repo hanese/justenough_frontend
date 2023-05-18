@@ -46,7 +46,7 @@ async function getRecipesByStorageIngredients() {
 
 onMounted(async () => {
   await getRecipesByStorageIngredients();
-  isLoading.value = false;
+    isLoading.value = false;
 });
 </script>
 
