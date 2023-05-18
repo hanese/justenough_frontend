@@ -86,7 +86,7 @@ function newPage(wholeMeal) {
 
         <ul style="list-style-type: none; display: block;">
             <li v-if="!isLoading"  v-for="meal in recipes" :key="meal">
-                <router-link :to="newPage(meal.uuid)"><span style="display: inline">{{ meal.meal }}</span></router-link>
+                <router-link :to="newPage(meal.uuid)"><span style="display: inline; color: black">{{ meal.meal }}</span></router-link>
             </li>
             <li v-else>
                 Loading...

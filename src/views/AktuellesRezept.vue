@@ -3,9 +3,6 @@
     <div v-if="wholeMeal">
       <h2 class="topic">{{ wholeMeal.meal }}</h2>
       <div class="content">
-        <div class="meal-image">
-          <img :src="wholeMeal.meal_thumb" alt="Meal Thumb" />
-        </div>
         <div class="ingredients-block">
           <table class="ingredients-table">
             <h3>Ingredients</h3>
@@ -39,6 +36,7 @@
 <script setup>
 import { useRoute } from "vue-router";
 import { ref } from "vue";
+import FooterPers from "@/components/FooterPers.vue";
 
 const wholeMeal = ref(null);
 
