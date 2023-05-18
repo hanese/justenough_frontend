@@ -17,6 +17,7 @@
           v-model="ingredient.name"
           :placeholder="'Ingredient ' + (index + 1)"
           @input="getIngredients(ingredient)"
+          @blur="this.ingredientsList = []"
       >
       <input type="text" class="form-control" v-model="ingredient.measure" :placeholder="'Measure ' + (index + 1)">
       <ul v-if="ingredientsList.length > 0" class="suggestions">
